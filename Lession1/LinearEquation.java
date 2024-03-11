@@ -1,3 +1,4 @@
+package Lession1;
 import javax.swing.JOptionPane;
 import java.util.Scanner;
 import java.lang.Math;
