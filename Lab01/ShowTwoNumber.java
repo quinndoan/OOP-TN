@@ -1,4 +1,4 @@
-package Lession1;
+package Lab01;
 import javax.swing.JOptionPane;
 public class ShowTwoNumber {
     public static void main(String[] args){

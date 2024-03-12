@@ -1,4 +1,4 @@
-package Lession1;
+package Lab01;
 //import javax.swing.JOptionPane;
 import java.util.Scanner;
 

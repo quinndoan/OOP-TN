@@ -1,4 +1,4 @@
-package Lession1;
+package Lab01;
 import java.util.Scanner;
 public class InputFromKeyboard {
     public static void main(String args[]){
@@ -9,6 +9,8 @@ public class InputFromKeyboard {
     int iAge = keyboard.nextInt();
     System.out.println("How tall are you (m)?");
     double dHeight = keyboard.nextDouble();
+
+    keyboard.close();
 
     System.out.println("Mrs/Ms. " + strName+ ", "+ iAge+ " years old. "+ "Your height is "+ dHeight+ ".");
 }

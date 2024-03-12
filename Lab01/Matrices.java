@@ -1,5 +1,4 @@
-package Lession1;
-import java.lang.Math;
+package Lab01;
 import java.util.Scanner;
 public class Matrices {
     public static void main(String[] args){
@@ -25,6 +24,8 @@ public class Matrices {
                     matrix2[i][j]= scanner.nextInt();
                 }
             }
+
+            scanner.close();
 
             int[][] matrixAdd = new int[row][column];
             for (int i=0;i<row;i++){
