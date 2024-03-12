@@ -21,18 +21,19 @@ public class LinearEquation {
     
                 break;
             case "First Degree Two Variable":
-            System.out.println("Nhap so: ");
+            System.out.println("Enter the variables for equation 1: ");
             double a11 = scanner.nextDouble();
             double a12 = scanner.nextDouble();
+            double b1 = scanner.nextDouble();
+            System.out.println("Enter the variables for equation 2: ");
             double a21 = scanner.nextDouble();
             double a22 = scanner.nextDouble();
-            double b1 = scanner.nextDouble();
             double b2 = scanner.nextDouble();
             scanner.close();
-            if (a12 == 0 && a11 !=b1){
+            if ((a12 == 0 || a11==0) && a11 !=b1){
                 System.out.println("No Solution");
             }
-            else if (a22 ==0 && a21 !=b2){
+            else if ((a22 ==0 || a21==0) && a21 !=b2){
                 System.out.println("No Solution");
             }
             else if (a11*a22 == a21*a12 && a11*b2 == a21*b1){
