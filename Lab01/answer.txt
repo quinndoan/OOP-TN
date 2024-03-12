@@ -1,0 +1,3 @@
+If I click "Cancel", it will show a window of message: "You've chosen: No"
+
+To customize the user's option, we can create an array type string named "option" and use the "showOptionDialog" to show the option we created ("Yes"/ "No" or "I do"/ "I don't")
