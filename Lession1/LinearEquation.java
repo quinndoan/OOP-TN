@@ -29,7 +29,13 @@ public class LinearEquation {
             double b1 = scanner.nextDouble();
             double b2 = scanner.nextDouble();
             scanner.close();
-            if (a11*a22 == a21*a12 && a11*b2 == a21*b1){
+            if (a12 == 0 && a11 !=b1){
+                System.out.println("No Solution");
+            }
+            else if (a22 ==0 && a21 !=b2){
+                System.out.println("No Solution");
+            }
+            else if (a11*a22 == a21*a12 && a11*b2 == a21*b1){
                 System.out.println("Infinite Solution");
 
             }
@@ -45,7 +51,7 @@ public class LinearEquation {
             }
             break;
             case "Second Degree One Variable":
-            System.out.println("Nhap so: 3");
+            System.out.println("Nhap so: ");
                 double a3 = scanner.nextDouble();
                 double b3 = scanner.nextDouble();
                 double c3 = scanner.nextDouble();
@@ -61,14 +67,14 @@ public class LinearEquation {
 
                     }
                     else if (gamma==0){
-                        double result = -b3/2*a3;
+                        double result = -b3/(2*a3);
                         System.out.println("Double root: "+ result);
                     }
                     else {
-                        double x1 = (-b3 + Math.sqrt(gamma));
-                        System.out.println("Result1: " + x1 + " and ");
-                        double x2 = (-b3 - Math.sqrt(gamma));
-                        System.out.println("Result: " + x2);
+                        double x1 = (-b3 + Math.sqrt(gamma))/(2*a3);
+                        System.out.println("x1: " + x1 + " ");
+                        double x2 = (-b3 - Math.sqrt(gamma))/(2*a3);
+                        System.out.println("x2: " + x2);
                     }
                 }
                 break;
