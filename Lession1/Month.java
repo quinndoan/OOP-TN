@@ -8,6 +8,8 @@ public class Month {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the month: ");
         String MonthCase = scanner.nextLine();
+        System.out.println("Enter the year: ");
+        int yearInt = scanner.nextInt();
         switch (MonthCase){
             case "January":
             case "Jan":
@@ -56,8 +58,8 @@ public class Month {
            case "Feb.":
            case "Feb":
            case "2":
-           System.out.println("Enter the year: ");
-           int yearInt = scanner.nextInt();
+          // System.out.println("Enter the year: ");
+           //int yearInt = scanner.nextInt();
 
            scanner.close();
            if (yearInt %100 ==0 && yearInt%400 !=0){
