@@ -45,8 +45,8 @@ public class LinearEquation {
             else {
                 double x2 = (a11*b2 - b1*a21)/ (a22*a11-a12*a21);
                 double x1 = (b1- a12*x2)/a11;
-                System.out.println("Result1: " +x1);
-                System.out.println("Result2: " +x2);
+                System.out.println("x1: " +x1);
+                System.out.println("x2: " +x2);
 
             }
             break;
