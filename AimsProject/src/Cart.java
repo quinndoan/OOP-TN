@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> topic/method-overloading
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
@@ -45,5 +48,60 @@ public class Cart {
 
     }
 
+<<<<<<< HEAD
 
 }
+=======
+    public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList){
+        for (DigitalVideoDisc disc : dvdList){
+            if (qtyOrdered <MAX_NUMBERS_ORDERED){
+                itemsOrdered[qtyOrdered] = disc;
+                qtyOrdered++;
+                System.out.println("The disc has been added");
+            }
+            else {
+                System.out.println("The cart has been full");
+                break;
+            }
+        }
+    }
+
+    //Overloading with number
+    //public void addDigitalVideoDisc(DigitalVideoDisc... dvdNum){
+      //  for (DigitalVideoDisc disc : dvdNum){
+        //    if (qtyOrdered <MAX_NUMBERS_ORDERED){
+          //      itemsOrdered[qtyOrdered] = disc;
+            //    qtyOrdered++;
+              //  System.out.println("The disc has been added");
+            //}
+           // else {
+         ////       System.out.println("The cart has been full");
+              //  break;
+          //  }
+     //   }
+    //}
+
+
+    // Overloading addDisc with two parameters
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2){
+        if (qtyOrdered +1 == MAX_NUMBERS_ORDERED){
+            itemsOrdered[qtyOrdered] = dvd1;
+            qtyOrdered++;
+            System.out.println("One disc has been added, the cart is now full");
+
+        }
+        else if (qtyOrdered+1 <MAX_NUMBERS_ORDERED){
+            itemsOrdered[qtyOrdered] = dvd1;
+            itemsOrdered[qtyOrdered+1] = dvd2;
+            qtyOrdered = qtyOrdered+2;
+            System.out.println("Two disc has been added");
+
+        }
+        else {
+            System.out.println("The cart is full");
+        }
+    }
+
+
+}
+>>>>>>> topic/method-overloading
