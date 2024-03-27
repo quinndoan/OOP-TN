@@ -5,7 +5,7 @@ In the swap method, we're swapping the references o1 and o2. However, these chan
 After the swap method is executed, the references jungleDVD and cinderellaDVD in the main method remain unchanged.
  They still point to the same objects, so their titles remain the same.
 
- 
+
 
 After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is
 the title of the JungleDVD changed?
@@ -14,4 +14,4 @@ In the changeTitle method, we're passing jungleDVD as the first argument,
 which means the reference to the jungleDVD object is being passed. 
 Inside the changeTitle method, we're modifying the title of the DigitalVideoDisc object
 referred to by the dvd parameter using dvd.setTitle(title). 
-So, when we print the title of jungleDVD after calling changeTitle, you'll see the updated title.
+So, when we print the title of jungleDVD after calling changeTitle, we'll see the updated title.
