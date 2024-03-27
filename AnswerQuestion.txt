@@ -1,7 +1,17 @@
+// Constructor Method question
+If you create a constructor method to build a DVD by title then create a constructor method to build
+a DVD by category. Does JAVA allow you to do this?
+Yes, Java allow to create
+
+
+//Overloading question
 Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of
 arguments for dvd. Compared to an array parameter. What do you prefer in this case?
+In this case,the one using arbitrary number is preferable due to its simplicity and flexibility when adding multiple DigitalVideoDisc
 
 
+
+// Passing parameter question
 After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
 
 In the swap method, we're swapping the references o1 and o2. However, these changes are local to the swap method.
@@ -9,12 +19,13 @@ After the swap method is executed, the references jungleDVD and cinderellaDVD in
  They still point to the same objects, so their titles remain the same.
 
 
-After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is
-the title of the JungleDVD changed?
+After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
 
-In the changeTitle method, we're passing jungleDVD as the first argument, which means the reference to the jungleDVD object is being passed. 
-Inside the changeTitle method, we're modifying the title of the DigitalVideoDisc object
-referred to by the dvd parameter using dvd.setTitle(title). 
-So, when we print the title of jungleDVD after calling changeTitle, we'll see thTry to add a method addDigitalVideoDisc which allows to pass an arbitrary number of
-arguments for dvd. Compared to an array parameter. What do you prefer in this case?
-
+Here, we're passing jungleDVD as the first argument, which means the reference to the jungleDVD object is being passed.
+Inside the method, we're modifying the title of the DigitalVideoDisc object referred to by the dvd parameter using dvd.setTitle(title).
+So, when we print the title of jungleDVD after calling changeTitle, we'll see the updated title.
+However, the line: dvd = new DigitalVideoDisc(oldTitle);
+creates a new DigitalVideoDisc object with the old title and assigns its reference to the dvd parameter.
+This line has no effect outside the changeTitle method because dvd is a local variable within the method scope.
+Therefore, the original jungleDVD reference in the main method remains unchanged,
+but its title has been modified directly inside the changeTitle method.

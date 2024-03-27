@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-
-=======
->>>>>>> topic/method-overloading
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
@@ -48,10 +43,6 @@ public class Cart {
 
     }
 
-<<<<<<< HEAD
-
-}
-=======
     public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList){
         for (DigitalVideoDisc disc : dvdList){
             if (qtyOrdered <MAX_NUMBERS_ORDERED){
@@ -66,22 +57,16 @@ public class Cart {
         }
     }
 
-    //Overloading with number
-    //public void addDigitalVideoDisc(DigitalVideoDisc... dvdNum){
-      //  for (DigitalVideoDisc disc : dvdNum){
-        //    if (qtyOrdered <MAX_NUMBERS_ORDERED){
-          //      itemsOrdered[qtyOrdered] = disc;
-            //    qtyOrdered++;
-              //  System.out.println("The disc has been added");
-            //}
-           // else {
-         ////       System.out.println("The cart has been full");
-              //  break;
-          //  }
-     //   }
+    //Overloading with numbers of arguments
+    // Note: we cannot put this method or the method :public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList) at the same time
+    // in the same file, so I mark this method as comments.
+    
+    //public void addDigitalVideoDisc(DigitalVideoDisc... dvds) {
+    //    for (DigitalVideoDisc dvd : dvds) {
+    //        addDigitalVideoDisc(dvd); 
+    //    }
     //}
-
-
+      
     // Overloading addDisc with two parameters
     public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2){
         if (qtyOrdered +1 == MAX_NUMBERS_ORDERED){
@@ -104,4 +89,3 @@ public class Cart {
 
 
 }
->>>>>>> topic/method-overloading
