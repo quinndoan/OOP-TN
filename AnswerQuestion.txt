@@ -1,3 +1,4 @@
+
 Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of
 arguments for dvd. Compared to an array parameter. What do you prefer in this case?
-
+In this case,the one using arbitrary number is preferable due to its simplicity and flexibility when adding multiple DigitalVideoDisc
