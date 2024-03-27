@@ -2,8 +2,7 @@ Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number
 arguments for dvd. Compared to an array parameter. What do you prefer in this case?
 
 
-After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two
-objects still remain?
+After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
 
 In the swap method, we're swapping the references o1 and o2. However, these changes are local to the swap method.
 After the swap method is executed, the references jungleDVD and cinderellaDVD in the main method remain unchanged.
@@ -13,8 +12,7 @@ After the swap method is executed, the references jungleDVD and cinderellaDVD in
 After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is
 the title of the JungleDVD changed?
 
-In the changeTitle method, we're passing jungleDVD as the first argument,
-which means the reference to the jungleDVD object is being passed. 
+In the changeTitle method, we're passing jungleDVD as the first argument, which means the reference to the jungleDVD object is being passed. 
 Inside the changeTitle method, we're modifying the title of the DigitalVideoDisc object
 referred to by the dvd parameter using dvd.setTitle(title). 
 So, when we print the title of jungleDVD after calling changeTitle, we'll see thTry to add a method addDigitalVideoDisc which allows to pass an arbitrary number of
