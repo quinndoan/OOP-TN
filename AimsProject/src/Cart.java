@@ -61,7 +61,7 @@ public class Cart {
     // Note: we cannot put this method or the method :public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList) at the same time
     // in the same file, so I mark this method as comments.
     
-    //public void addDigitalVideoDisc(DigitalVideoDisc... dvds) {
+    //public void addDigitalVideoDisc(DigitalVideoDisc... dvds) {  
     //    for (DigitalVideoDisc dvd : dvds) {
     //        addDigitalVideoDisc(dvd); 
     //    }
