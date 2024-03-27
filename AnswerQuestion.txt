@@ -10,7 +10,6 @@ After the swap method is executed, the references jungleDVD and cinderellaDVD in
  They still point to the same objects, so their titles remain the same.
 
 
-
 After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is
 the title of the JungleDVD changed?
 
