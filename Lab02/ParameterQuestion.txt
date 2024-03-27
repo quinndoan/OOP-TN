@@ -1,0 +1,20 @@
+After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two
+objects still remain?
+
+In the swap method, we're swapping the references o1 and o2. However, these changes are local to the swap method.
+After the swap method is executed, the references jungleDVD and cinderellaDVD in the main method remain unchanged.
+ They still point to the same objects, so their titles remain the same.
+
+
+
+After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is
+the title of the JungleDVD changed?
+
+Here, we're passing jungleDVD as the first argument, which means the reference to the jungleDVD object is being passed.
+Inside the method, we're modifying the title of the DigitalVideoDisc object referred to by the dvd parameter using dvd.setTitle(title).
+So, when we print the title of jungleDVD after calling changeTitle, we'll see the updated title.
+However, the line: dvd = new DigitalVideoDisc(oldTitle);
+creates a new DigitalVideoDisc object with the old title and assigns its reference to the dvd parameter.
+This line has no effect outside the changeTitle method because dvd is a local variable within the method scope.
+Therefore, the original jungleDVD reference in the main method remains unchanged,
+but its title has been modified directly inside the changeTitle method.
