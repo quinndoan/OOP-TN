@@ -53,8 +53,5 @@ public DigitalVideoDisc(String title, String category, String director, int leng
     this.length = length;
     this.cost = cost;
 }
-public void setTitle(String title) {
-    this.title = title;
-}
 
 }
