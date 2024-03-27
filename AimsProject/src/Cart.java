@@ -89,7 +89,7 @@ public class Cart {
 
         }
         else {
-            System.out.println("The cart is almost full");
+            System.out.println("The cart is full");
         }
     }
 
