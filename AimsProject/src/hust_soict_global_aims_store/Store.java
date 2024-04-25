@@ -1,24 +1,105 @@
 package hust_soict_global_aims_store;
 import java.util.ArrayList;
-import hust_soict_globalict_aims_media.DigitalVideoDisc;
+import java.util.Scanner;
 
-public class Store{
-    public ArrayList<DigitalVideoDisc> getItems(){
-        return itemsOrdered;
+import hust_soict_globalict_aims_media.*;
+
+public class Store {
+    private ArrayList<Media> itemsInStore = new ArrayList<Media>();
+
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
     }
 
-private ArrayList<DigitalVideoDisc> itemsOrdered = new ArrayList<>();
-
-    public void addDigitalVideoDisc(DigitalVideoDisc disc){
-        itemsOrdered.add(disc);
-    }
-    public void removeDigitalVideoDisc(DigitalVideoDisc disc){
-        itemsOrdered.remove(disc);
+    public void addMedia(Media media) {
+        itemsInStore.add(media);
+        System.out.println("Media \"" + media.getTitle() + "\" added to the store.");
     }
 
-   
-    
+    public static void addMediaToStore(Store store, Scanner scanner) {
+        System.out.println("Adding a new media to the store...");
+        System.out.print("Enter title: ");
+        String title = scanner.nextLine();
+        title = scanner.nextLine(); // Read title
+        
+        System.out.print("Enter category: ");
+        String category = scanner.nextLine();
 
-    
+        System.out.print("Enter cost: ");
+        float cost = scanner.nextFloat();
 
+        Media newMedia = new Media(title, category, cost);
+        store.addMedia(newMedia);
+    }
 }
+
+    // Xóa một media khỏi cửa hàng
+    public void removeMedia(Media media) {
+        if (itemsInStore.contains(media)) {
+            itemsInStore.remove(media);
+            System.out.println("Media \"" + media.getTitle() + "\" removed from the store.");
+        } else {
+            System.out.println("Media \"" + media.getTitle() + "\" not found in the store.");
+        }
+    }
+
+
+    public static Media getSelectedMediaFromStore(Store store, Scanner scanner) {
+        ArrayList<Media> itemsInStore = store.getItemsInStore();
+        
+        System.out.println("Enter the title of the media: ");
+        String title = scanner.nextLine();
+        title = scanner.nextLine(); // Read title
+    
+        Media selectedMedia = store.searchMediaByTitle(title, itemsInStore);
+    
+        if (selectedMedia == null) {
+            System.out.println("Media with title \"" + title + "\" not found.");
+        }
+    
+        return selectedMedia;
+    }
+    
+
+
+    public static Media searchMediaByTitle(String title, ArrayList<Media> mediaList){
+        for (Media media: mediaList){
+            if (media.getTitle().equalsIgnoreCase(title)){
+                return media;
+            }
+        }
+        return null;
+    }
+    
+
+      public static void seeMediaDetails(Store store, Scanner scanner) {
+    System.out.println("Enter the title of the media: ");
+    String title = scanner.nextLine(); 
+    title = scanner.nextLine(); // Read title
+    Media media = store.searchMediaByTitle(title, store.getItemsInStore());
+    if (media != null) {
+        System.out.println("Media Details:");
+        System.out.println(media.toString());
+    } else {
+        System.out.println("Media with title \"" + title + "\" not found.");
+    }
+}
+
+public static void play(Store store, Scanner scanner) {
+    ArrayList<Media> itemsInStore = store.getItemsInStore();
+    
+    System.out.println("Enter the title of the media you want to play: ");
+    String title = scanner.nextLine();
+    title = scanner.nextLine(); // Read title
+
+    Media selectedMedia = store.searchMediaByTitle(title, itemsInStore);
+
+    if (selectedMedia != null) {
+        System.out.println("Playing media: " + selectedMedia.getTitle());
+        // Perform play action here
+    } else {
+        System.out.println("Media with title \"" + title + "\" not found.");
+    }
+}
+
+

@@ -1,10 +1,6 @@
 {
     "java.project.sourcePaths": [
-      //  "src/hust_soict_globalict_aims_cart_CartTest",
-     //   "src/hust_soict_globalict_aims_cart_Cart",
-     //   "src/hust_soict_globalict_aims_TestPassingParameter",
-     //   "src/hust_soict_globalict_aims_DigitalVideoDisc",
-     //   "src/hust_soict_globalict_aims_Aims",
+
         "src"
     ],
     "java.project.outputPath": "bin",
