@@ -1,7 +1,7 @@
 package hust_soict_global_aims_store;
 import java.util.ArrayList;
 import java.util.Scanner;
-import hust_soict_globalict_aims_media.Media;
+import hust_soict_globalict_aims_media.*;
 
 public class Store {
     private static int lastId = 0;
@@ -94,7 +94,6 @@ public static void play(Store store, Scanner scanner) {
 
     if (selectedMedia != null) {
         System.out.println("Playing media: " + selectedMedia.getTitle());
-        // Perform play action here
     } else {
         System.out.println("Media with title \"" + title + "\" not found.");
     }
