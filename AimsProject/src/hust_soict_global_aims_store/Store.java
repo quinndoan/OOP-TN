@@ -131,15 +131,12 @@ public class Store {
         String title = scanner.nextLine();
         title = scanner.nextLine(); // Đọc tiêu đề
     
-        // Tìm kiếm media trong store dựa trên tiêu đề
         Media media = store.searchMediaByTitle(title, store.getItemsInStore());
     
         if (media != null) {
-            // Nếu media được tìm thấy, thêm vào giỏ hàng và cập nhật store
             cart.addMedia(media);
             System.out.println("Media \"" + title + "\" added to cart.");
         } else {
-            // Nếu không tìm thấy, thông báo cho người dùng
             System.out.println("Media with title \"" + title + "\" not found in the store.");
         }
     }
