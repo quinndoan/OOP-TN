@@ -90,9 +90,6 @@ public class Cart {
         }
         return total;
     }
-    // public static void seeCurrentCart(Cart cart) {
-    //     System.out.println("Current Cart:");
-    //     cart.print();
-    // }
+    
     
 }

@@ -1,6 +1,9 @@
 package hust_soict_globalict_aims_media;
 
 import java.util.Comparator;
+import java.util.Scanner;
+
+import hust_soict_globalict_aims_cart_Cart.Cart;
 
 public abstract class Media {
     private int id;
@@ -62,10 +65,30 @@ public abstract class Media {
         }
     }
 
-    //public abstract void play();
-    
-
     public static final Comparator<Media> COMPARE_BY_TITLE = new CompareByTitle();
 
     public static final Comparator<Media> COMPARE_BY_COST = new CompareByCost();
+
+
+     public static void filterMediaInCart(Cart cart, Scanner scanner) {
+        System.out.println("Filter media in cart:");
+        System.out.println("1. By ID");
+        System.out.println("2. By Title");
+        System.out.print("Choose a filtering option (1-2): ");
+        int option = scanner.nextInt();
+        scanner.nextLine(); // Đọc ký tự new line
+
+        switch (option) {
+            case 1:
+                cart.searchByID(option);
+                break;
+            case 2:
+                //filterMediaByTitle(cart, scanner);
+                break;
+            default:
+                System.out.println("Invalid option. Please choose again.");
+                break;
+        }
+    }
+
 }
