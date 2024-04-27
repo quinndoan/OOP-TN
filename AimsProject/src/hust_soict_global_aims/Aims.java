@@ -1,5 +1,4 @@
 package hust_soict_global_aims;
-
 import hust_soict_global_aims_store.*;
 import hust_soict_globalict_aims_media.*;
 import hust_soict_globalict_aims_cart_Cart.*;
@@ -31,7 +30,7 @@ public class Aims {
                 default:
                     System.out.println("Invalid choice. Please choose again.");
             }
-        }
+        }   
     }
 
     public static void showMenu() {
@@ -53,20 +52,16 @@ public class Aims {
                 System.out.println("Returning to main menu...");
                 break;
             case 1:
-                store.seeMediaDetails(store,scanner);
+                store.seeMediaDetail(store,scanner);
                 break;
             case 2:
-                Media selectedMedia = Store.getSelectedMediaFromStore(store, scanner);
-                if (selectedMedia != null) {
-                    cart.addMedia(selectedMedia);
-                    System.out.println("Media \"" + selectedMedia.getTitle() + "\" added to cart.");
-                }
+                store.addMediaToCart(store,cart, scanner);
                 break;
             case 3:
-                store.play(store, scanner);
+                store.playMedia(store, scanner);
                 break;
             case 4:
-                // seeCurrentCart(cart);
+                cart.print();
                 break;
             default:
                 System.out.println("Invalid choice. Please choose again.");
@@ -100,33 +95,14 @@ public class Aims {
                 System.out.println("Returning to main menu...");
                 break;
             case 1:
-                store.addMediaToStore(store, scanner);
+                store.addMediaToStore(scanner);
                 break;
             case 2:
-                removeMediaFromStore(store, scanner);
+                store.removeMediaFromStore(store,scanner);
                 break;
             default:
                 System.out.println("Invalid choice. Please choose again.");
                 break;
-        }
-    }
-    
-    
-    public static void removeMediaFromStore(Store store, Scanner scanner) {
-        System.out.println("Removing a media from the store...");
-        // Ask user for media title to remove
-        System.out.print("Enter the title of the media to remove: ");
-        String title = scanner.nextLine();
-        title = scanner.nextLine(); // Read title
-    
-        // Search for media in the store
-        Media mediaToRemove = store.searchMediaByTitle(title, store.getItemsInStore());
-        if (mediaToRemove != null) {
-            // If found, remove it from the store
-            store.removeMedia(mediaToRemove);
-        } else {
-            // If not found, display error message
-            System.out.println("Media with title \"" + title + "\" not found in the store.");
         }
     }
     
