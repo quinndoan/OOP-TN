@@ -15,6 +15,14 @@ import hust_soict_globalict_aims_media.*;
             return authors;
         }
 
+        public boolean isMatch(String title){
+            return this.getTitle().equals(title);
+        }
+        
+        public String toString() {
+            return getTitle() + "-"+getCategory()+ "-"+getCost();
+        }
+
 
     public void addAuthor(String authorName){
         if (!authors.contains(authorName)){

@@ -16,7 +16,6 @@ public class Main {
         mediaList.add(dvd);
         mediaList.add(book);
 
-        // Iterate through the list and print media information
         for (Media media : mediaList) {
             System.out.println(media.toString());
         }

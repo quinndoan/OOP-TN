@@ -41,6 +41,14 @@ public class CompactDisc extends Disc implements Playable {
         return totalLength;
     }
 
+    public boolean isMatch(String title){
+        return this.getTitle().equals(title);
+    }
+    
+    public String toString() {
+        return getTitle() + "-"+getCategory()+ "-"+ getDirector()+"-"+getArtist() +"-"+getCost();
+    }
+
     public void play(){
         System.out.println("Play CD: "+ getTitle());
         System.out.println("Total tracks: "+tracks.size());
