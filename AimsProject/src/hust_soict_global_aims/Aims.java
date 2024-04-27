@@ -25,7 +25,7 @@ public class Aims {
                     updateStore(store, scanner);
                     break;
                 case 3:
-                    seeCurrentCart(cart, scanner);
+                   // seeCurrentCart(cart, scanner);
                     break;
                 default:
                     System.out.println("Invalid choice. Please choose again.");
@@ -83,8 +83,7 @@ public class Aims {
                 store.playMedia(store, scanner);
                 break;
             case 4:
-                System.out.println("See current cart");
-                // Bổ sung code xử lý cho trường hợp này ở đây
+                cart.print();
                 break;
             default:
                 System.out.println("Invalid choice. Please choose again.");
@@ -139,16 +138,7 @@ public class Aims {
         }
     }
     
-
-    public static void seeCurrentCart(Cart cart, Scanner scanner) {
-        cartMenu();
-        int choice = scanner.nextInt();
-        switch (choice) {
-            // Implement logic for seeing current cart
-        }
-    }
-
-    public static void cartMenu() {
+    public static void cartMenu(Cart cart, Scanner scanner) {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
         System.out.println("1. Filter media in cart");
@@ -159,5 +149,31 @@ public class Aims {
         System.out.println("0. Back");
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3-4-5");
+        
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 0:
+                System.out.println("Returning to main menu...");
+                break;
+            case 1:
+                // Bổ sung code xử lý cho trường hợp này
+                break;
+            case 2:
+                // Bổ sung code xử lý cho trường hợp này
+                break;
+            case 3:
+                // Bổ sung code xử lý cho trường hợp này
+                break;
+            case 4:
+                // Bổ sung code xử lý cho trường hợp này
+                break;
+            case 5:
+                // Bổ sung code xử lý cho trường hợp này
+                break;
+            default:
+                System.out.println("Invalid choice. Please choose again.");
+                break;
+        }
     }
+    
 }
