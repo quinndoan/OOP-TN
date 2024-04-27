@@ -10,12 +10,12 @@ public class Track implements Playable{
     public int getLength(){
         return length;
     }
-    // public void setTitle(String title){
-    //     this.title = title;
-    // }
-    // public void setLength(int length){
-    //     this.length = length;
-    // }
+    public void setTitle(String title){
+        this.title = title;
+    }
+    public void setLength(int length){
+        this.length = length;
+    }
 
     public boolean equals(Object obj){
         if(this==obj){
