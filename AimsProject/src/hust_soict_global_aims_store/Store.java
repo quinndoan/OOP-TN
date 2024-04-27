@@ -99,6 +99,23 @@ public class Store {
             System.out.println("Media with title \"" + title + "\" not found in the store.");
         }
     }
+    public static void removeMediaFromStore(Store store, Scanner scanner) {
+        System.out.println("Removing a media from the store...");
+        // Ask user for media title to remove
+        System.out.print("Enter the title of the media to remove: ");
+        String title = scanner.nextLine();
+        title = scanner.nextLine(); // Read title
+    
+        // Search for media in the store
+        Media mediaToRemove = store.searchMediaByTitle(title, store.getItemsInStore());
+        if (mediaToRemove != null) {
+            // If found, remove it from the store
+            store.removeMedia(mediaToRemove);
+        } else {
+            // If not found, display error message
+            System.out.println("Media with title \"" + title + "\" not found in the store.");
+        }
+    }
     
     public void addMedia(Media media) {
         itemsInStore.add(media);
@@ -171,19 +188,19 @@ public class Store {
     }
     
 
-    public static Media getSelectedMediaFromStore(Store store, Scanner scanner) {
-        ArrayList<Media> itemsInStore = store.getItemsInStore();
+    // public static Media getSelectedMediaFromStore(Store store, Scanner scanner) {
+    //     ArrayList<Media> itemsInStore = store.getItemsInStore();
 
-        System.out.println("Enter the title of the media: ");
-        String title = scanner.nextLine();
+    //     System.out.println("Enter the title of the media: ");
+    //     String title = scanner.nextLine();
 
-        Media selectedMedia = store.searchMediaByTitle(title, itemsInStore);
+    //     Media selectedMedia = store.searchMediaByTitle(title, itemsInStore);
 
-        if (selectedMedia != null) {
-            System.out.println("Selected media: " + selectedMedia.toString());
-        } else {
-            System.out.println("Media with title \"" + title + "\" not found in the store.");
-        }
-        return selectedMedia;
-    }
+    //     if (selectedMedia != null) {
+    //         System.out.println("Selected media: " + selectedMedia.toString());
+    //     } else {
+    //         System.out.println("Media with title \"" + title + "\" not found in the store.");
+    //     }
+    //     return selectedMedia;
+    // }
 }
