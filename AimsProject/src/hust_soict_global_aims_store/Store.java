@@ -1,6 +1,8 @@
 package hust_soict_global_aims_store;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import hust_soict_globalict_aims_cart_Cart.Cart;
 import hust_soict_globalict_aims_media.*;
 
 public class Store {
@@ -112,6 +114,37 @@ public class Store {
             System.out.println("Media \"" + media.getTitle() + "\" not found in the store.");
         }
     }
+
+    public void displayItemInStore() {
+        for (Media media : itemsInStore) {
+            System.out.println("ID: " + media.getId());
+            System.out.println("Title: " + media.getTitle());
+            System.out.println("------------------------");
+        }
+    }
+    
+
+    public static void addMediaToCart(Store store, Cart cart, Scanner scanner) {
+        System.out.println("List of media in the store:");
+        store.displayItemInStore(); // Gọi phương thức displayItemInStore từ đối tượng store
+        System.out.print("Enter the title of the media you want to add to cart: ");
+        String title = scanner.nextLine();
+        title = scanner.nextLine(); // Đọc tiêu đề
+    
+        // Tìm kiếm media trong store dựa trên tiêu đề
+        Media media = store.searchMediaByTitle(title, store.getItemsInStore());
+    
+        if (media != null) {
+            // Nếu media được tìm thấy, thêm vào giỏ hàng và cập nhật store
+            cart.addMedia(media);
+            System.out.println("Media \"" + title + "\" added to cart.");
+        } else {
+            // Nếu không tìm thấy, thông báo cho người dùng
+            System.out.println("Media with title \"" + title + "\" not found in the store.");
+        }
+    }
+    
+
 
     // Tìm kiếm media theo tiêu đề
     public Media searchMediaByTitle(String title, ArrayList<Media> items) {
