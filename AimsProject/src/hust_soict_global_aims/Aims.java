@@ -25,7 +25,7 @@ public class Aims {
                     updateStore(store, scanner);
                     break;
                 case 3:
-                   // seeCurrentCart(cart, scanner);
+                    cart.print();
                     break;
                 default:
                     System.out.println("Invalid choice. Please choose again.");
