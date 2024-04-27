@@ -52,22 +52,33 @@ public class Aims {
                 System.out.println("Returning to main menu...");
                 break;
             case 1:
-                store.seeMediaDetail(store,scanner);
+                Media media = Store.seeMediaDetail(store, scanner); // Gọi phương thức tĩnh từ lớp Store
+                mediaDetailsMenu(); // Hiển thị menu chi tiết cho phương tiện
+                int detailChoice = scanner.nextInt();
+                switch (detailChoice) {
+                    case 0:
+                        break; // Quay lại menu cửa hàng
+                    case 1:
+                        if (media != null) { // Kiểm tra xem media có null không
+                            cart.addMedia(media); // Thêm media vào giỏ hàng
+                            System.out.println("Media \"" + media.getTitle() + "\" added to cart.");
+                        } else {
+                            System.out.println("No media available to add to cart.");
+                        }
+                        break;
+                    case 2:
+                        store.playMedia(store, scanner); // Phát media
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please choose again.");
+                        break;
+                }
                 break;
-            case 2:
-                store.addMediaToCart(store,cart, scanner);
-                break;
-            case 3:
-                store.playMedia(store, scanner);
-                break;
-            case 4:
-                cart.print();
-                break;
-            default:
-                System.out.println("Invalid choice. Please choose again.");
-                break;
+            // Các case khác
         }
     }
+    
+    
 
     public static void storeMenu() {
         System.out.println("Options: ");
@@ -80,6 +91,15 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3-4");
     }
+    public static void mediaDetailsMenu() {
+        System.out.println("Options: ");
+        System.out.println("--------------------------------");
+        System.out.println("1. Add to cart");
+        System.out.println("2. Play");
+        System.out.println("0. Back");
+        System.out.println("--------------------------------");
+        System.out.println("Please choose a number: 0-1-2");
+        }
 
     public static void updateStore(Store store, Scanner scanner) {
         System.out.println("Options:");

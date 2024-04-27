@@ -85,10 +85,24 @@ public class Store {
         System.out.println("Book added.");
     }
 
-    public static void seeMediaDetail(Store store, Scanner scanner) {
+    // public static void seeMediaDetail(Store store, Scanner scanner) {
+    //     System.out.print("Enter the title of the media: ");
+    //     String title = scanner.nextLine();
+    //     title = scanner.nextLine();
+    
+    //     Media media = store.searchMediaByTitle(title, store.getItemsInStore());
+    
+    //     if (media != null) {
+    //         System.out.println("Media Details:");
+    //         System.out.println(media.toString());
+    //     } else {
+    //         System.out.println("Media with title \"" + title + "\" not found in the store.");
+    //     }
+    // }
+    public static Media seeMediaDetail(Store store, Scanner scanner) {
         System.out.print("Enter the title of the media: ");
         String title = scanner.nextLine();
-        title = scanner.nextLine();
+        title = scanner.nextLine(); // Đọc tiêu đề
     
         Media media = store.searchMediaByTitle(title, store.getItemsInStore());
     
@@ -98,7 +112,10 @@ public class Store {
         } else {
             System.out.println("Media with title \"" + title + "\" not found in the store.");
         }
+    
+        return media;
     }
+    
     public static void removeMediaFromStore(Store store, Scanner scanner) {
         System.out.println("Removing a media from the store...");
         // Ask user for media title to remove
