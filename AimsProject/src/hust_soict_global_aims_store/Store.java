@@ -1,37 +1,34 @@
 package hust_soict_global_aims_store;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import hust_soict_globalict_aims_media.*;
+import hust_soict_globalict_aims_media.Media;
 
 public class Store {
+    private static int lastId = 0;
     private ArrayList<Media> itemsInStore = new ArrayList<Media>();
 
     public ArrayList<Media> getItemsInStore() {
         return itemsInStore;
     }
 
-    public void addMedia(Media media) {
-        itemsInStore.add(media);
-        System.out.println("Media \"" + media.getTitle() + "\" added to the store.");
-    }
-
-    public static void addMediaToStore(Store store, Scanner scanner) {
+    public void addMediaToStore(Scanner scanner) {
         System.out.println("Adding a new media to the store...");
         System.out.print("Enter title: ");
         String title = scanner.nextLine();
         title = scanner.nextLine(); // Read title
-        
         System.out.print("Enter category: ");
         String category = scanner.nextLine();
-
         System.out.print("Enter cost: ");
         float cost = scanner.nextFloat();
 
-        Media newMedia = new Media(title, category, cost);
-        store.addMedia(newMedia);
+        Media newMedia = new Media(++lastId, title, category, cost); 
+        addMedia(newMedia);
     }
-}
+
+    public void addMedia(Media media) {
+        itemsInStore.add(media);
+        System.out.println("Media \"" + media.getTitle() + "\" added to the store with ID: " + media.getId());
+    }
 
     // Xóa một media khỏi cửa hàng
     public void removeMedia(Media media) {
@@ -42,6 +39,7 @@ public class Store {
             System.out.println("Media \"" + media.getTitle() + "\" not found in the store.");
         }
     }
+
 
 
     public static Media getSelectedMediaFromStore(Store store, Scanner scanner) {
@@ -102,4 +100,4 @@ public static void play(Store store, Scanner scanner) {
     }
 }
 
-
+}
