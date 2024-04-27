@@ -53,6 +53,7 @@ public class Aims {
                 break;
             case 1:
                 Media media = Store.seeMediaDetail(store, scanner); // Gọi phương thức tĩnh từ lớp Store
+                
                 mediaDetailsMenu(); // Hiển thị menu chi tiết cho phương tiện
                 int detailChoice = scanner.nextInt();
                 switch (detailChoice) {
