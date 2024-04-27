@@ -3,6 +3,7 @@ import hust_soict_globalict_aims_media.DigitalVideoDisc;
 import hust_soict_globalict_aims_media.Media;
 import hust_soict_global_aims_store.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Cart {
     private ArrayList<Media> itemsOrdered = new ArrayList<>();
@@ -37,6 +38,22 @@ public class Cart {
             System.out.println("The media with title \"" + title + "\" is not found");
         }
     }
+
+    public static void addMediaToCart(Store store, Cart cart, Scanner scanner) {
+    System.out.print("Enter the title of the media: ");
+    String title = scanner.nextLine();
+    title = scanner.nextLine(); // Đọc tiêu đề
+
+    Media media = store.searchMediaByTitle(title, store.getItemsInStore());
+
+    if (media != null) {
+        cart.addMedia(media);
+        System.out.println("Media \"" + media.getTitle() + "\" added to cart.");
+    } else {
+        System.out.println("Media with title \"" + title + "\" not found in the store.");
+    }
+}
+
 
     public int countDVDsInCart() {
         int count = 0;

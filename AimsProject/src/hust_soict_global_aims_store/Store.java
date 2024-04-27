@@ -205,19 +205,27 @@ public class Store {
     }
     
 
-    // public static Media getSelectedMediaFromStore(Store store, Scanner scanner) {
-    //     ArrayList<Media> itemsInStore = store.getItemsInStore();
-
-    //     System.out.println("Enter the title of the media: ");
-    //     String title = scanner.nextLine();
-
-    //     Media selectedMedia = store.searchMediaByTitle(title, itemsInStore);
-
-    //     if (selectedMedia != null) {
-    //         System.out.println("Selected media: " + selectedMedia.toString());
-    //     } else {
-    //         System.out.println("Media with title \"" + title + "\" not found in the store.");
-    //     }
-    //     return selectedMedia;
-    // }
+    public static void play(Store store, Scanner scanner) {
+        System.out.print("Enter the title of the media: ");
+        String title = scanner.nextLine();
+        title = scanner.nextLine(); // Đọc tiêu đề
+    
+        Media media = store.searchMediaByTitle(title, store.getItemsInStore());
+    
+        if (media != null) {
+            System.out.println("Media Details:");
+            System.out.println(media.toString());
+    
+            if (media instanceof CompactDisc) {
+                ((CompactDisc) media).play();
+            } else if (media instanceof DigitalVideoDisc) {
+                ((DigitalVideoDisc) media).play();
+            } else {
+                System.out.println("Cannot play media. Media type not supported.");
+            }
+        } else {
+            System.out.println("Media with title \"" + title + "\" not found in the store.");
+        }
+    }
+    
 }

@@ -45,27 +45,28 @@ public class Aims {
     }
 
     public static void viewStore(Store store, Cart cart, Scanner scanner) {
-        storeMenu();
+        System.out.println("Items in the store:");
+        store.displayItemInStore(); // Hiển thị tất cả các mặt hàng trong cửa hàng
+        storeMenu(); // Hiển thị menu của cửa hàng
         int choice = scanner.nextInt();
         switch (choice) {
             case 0:
                 System.out.println("Returning to main menu...");
                 break;
             case 1:
-                Media media = Store.seeMediaDetail(store, scanner); // Gọi phương thức tĩnh từ lớp Store
-                
-                mediaDetailsMenu(); // Hiển thị menu chi tiết cho phương tiện
+                Media media = Store.seeMediaDetail(store, scanner); // Xem chi tiết một phương tiện
+                if (media == null) {
+                    System.out.println("No media selected.");
+                    break;
+                }
+                mediaDetailsMenu();
                 int detailChoice = scanner.nextInt();
                 switch (detailChoice) {
                     case 0:
                         break;
                     case 1:
-                        if (media != null) { 
-                            cart.addMedia(media); 
-                            System.out.println("Media \"" + media.getTitle() + "\" added to cart.");
-                        } else {
-                            System.out.println("No media available to add to cart.");
-                        }
+                        cart.addMedia(media);
+                        System.out.println("Media \"" + media.getTitle() + "\" added to cart.");
                         break;
                     case 2:
                         store.playMedia(store, scanner);
@@ -75,9 +76,21 @@ public class Aims {
                         break;
                 }
                 break;
+            case 2:
+                cart.addMediaToCart(store, cart, scanner);
+                break;
+            case 3:
+                store.playMedia(store, scanner);
+                break;
+            case 4:
+                System.out.println("See current cart");
+                // Bổ sung code xử lý cho trường hợp này ở đây
+                break;
+            default:
+                System.out.println("Invalid choice. Please choose again.");
+                break;
         }
     }
-    
     
 
     public static void storeMenu() {
