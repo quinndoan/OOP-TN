@@ -65,9 +65,36 @@ public abstract class Media {
         }
     }
 
+    public static void filterCartByID(Cart cart, Scanner scanner) {
+        System.out.println("Filter media in cart by ID:");
+        System.out.print("Enter the ID to filter: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Đọc ký tự new line
+    
+        Media media = cart.searchByID(id);
+        if (media != null) {
+            System.out.println("Found media with ID " + id + ": " + media.getTitle());
+        } else {
+            System.out.println("No media found with ID " + id);
+        }
+    }
+    public static void filterCartByTitle(Cart cart, Scanner scanner) {
+        System.out.println("Filter media in cart by Title:");
+        System.out.print("Enter the Title to filter: ");
+        String title = scanner.nextLine();
+    
+        Media media = cart.searchByTitle(title);
+        if (media != null) {
+            System.out.println("Found media with Title " + title + ": " + media.getTitle());
+        } else {
+            System.out.println("No media found with Title " + title);
+        }
+    }
+
     public static final Comparator<Media> COMPARE_BY_TITLE = new CompareByTitle();
 
     public static final Comparator<Media> COMPARE_BY_COST = new CompareByCost();
+
 
 
      public static void filterMediaInCart(Cart cart, Scanner scanner) {
@@ -80,10 +107,10 @@ public abstract class Media {
 
         switch (option) {
             case 1:
-                cart.searchByID(option);
+                filterCartByID(cart, scanner);
                 break;
             case 2:
-                //filterMediaByTitle(cart, scanner);
+                filterCartByTitle(cart, scanner);
                 break;
             default:
                 System.out.println("Invalid option. Please choose again.");
@@ -91,4 +118,5 @@ public abstract class Media {
         }
     }
 
+   
 }

@@ -7,7 +7,10 @@ import java.util.Scanner;
 
 public class Cart {
     private ArrayList<Media> itemsOrdered = new ArrayList<>();
-
+    
+    public ArrayList<Media> getItemsInCart() {
+        return itemsOrdered;
+    }
     public void addMedia(Media media) {
         itemsOrdered.add(media);
     }
@@ -16,27 +19,26 @@ public class Cart {
         itemsOrdered.remove(media);
     }
 
-    public void searchByID(int id) {
+    public Media searchByID(int id) {
         for (Media media : itemsOrdered) {
             if (media.getId() == id) {
                 System.out.println("The media is found with the id: " + id + " " + media.toString());
-                return;
+                return media;
             }
         }
         System.out.println("The media with id " + id + " is not found");
+        return null;
     }
-
-    public void searchByTitle(String title) {
-        boolean foundItem = false;
+    
+    public Media searchByTitle(String title) {
         for (Media media : itemsOrdered) {
             if (media.getTitle().equalsIgnoreCase(title)) {
                 System.out.println("The media is found with the title: " + title + " " + media.toString());
-                foundItem = true;
+                return media;
             }
         }
-        if (!foundItem) {
-            System.out.println("The media with title \"" + title + "\" is not found");
-        }
+        System.out.println("The media with title \"" + title + "\" is not found");
+        return null;
     }
 
     public static void addMediaToCart(Store store, Cart cart, Scanner scanner) {
@@ -90,6 +92,65 @@ public class Cart {
         }
         return total;
     }
+
+    public void sortMediaInCart(Cart cart,Scanner scanner) {
+        System.out.println("Sort media in cart:");
+        System.out.println("1. By Title");
+        System.out.println("2. By Cost");
+        System.out.print("Choose a sorting option (1-2): ");
+        int option = scanner.nextInt();
+        scanner.nextLine(); // Đọc ký tự new line
+    
+        switch (option) {
+            case 1:
+                itemsOrdered.sort(Media.COMPARE_BY_TITLE);
+                break;
+            case 2:
+                itemsOrdered.sort(Media.COMPARE_BY_COST);
+                break;
+            default:
+                System.out.println("Invalid option. Please choose again.");
+                break;
+        }
+    }
+    
+    public void placeOrder() {
+        System.out.println("Order is created. Your cart is now empty.");
+        itemsOrdered.clear();
+    }
+    
+    public static void removeMediaFromCart(Cart cart, Scanner scanner) {
+        System.out.println("Removing a media from the store...");
+        // Ask user for media title to remove
+        System.out.print("Enter the title of the media to remove: ");
+        String title = scanner.nextLine();
+        title = scanner.nextLine(); // Read title
+    
+        // Search for media in the store
+        Media mediaToRemove = cart.searchByTitle(title);
+        if (mediaToRemove != null) {
+            // If found, remove it from the store
+            cart.removeMedia(mediaToRemove);
+        } else {
+            // If not found, display error message
+            System.out.println("Media with title \"" + title + "\" not found in the cart.");
+        }
+    }
+    public void playMedia(Cart cart, Scanner scanner) {
+        System.out.print("Enter the title of the media you want to play: ");
+        String title = scanner.nextLine();
+        title = scanner.nextLine(); // Đọc tiêu đề
+    
+        // Tìm kiếm media trong store dựa trên tiêu đề
+        Media media = cart.searchByTitle(title);
+    
+        if (media != null) {
+            media.play();
+        } else {
+            System.out.println("Media with title \"" + title + "\" not found in the cart.");
+        }
+    }
+    
     
     
 }

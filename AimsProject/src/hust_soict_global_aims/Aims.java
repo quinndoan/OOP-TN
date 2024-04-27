@@ -156,19 +156,19 @@ public class Aims {
                 System.out.println("Returning to main menu...");
                 break;
             case 1:
-                // Bổ sung code xử lý cho trường hợp này
+                Media.filterMediaInCart(cart, scanner);
                 break;
             case 2:
-                // Bổ sung code xử lý cho trường hợp này
+                cart.sortMediaInCart(cart,scanner);
                 break;
             case 3:
-                // Bổ sung code xử lý cho trường hợp này
+                Cart.removeMediaFromCart(cart, scanner);
                 break;
             case 4:
-                // Bổ sung code xử lý cho trường hợp này
+                cart.playMedia(cart,scanner);
                 break;
             case 5:
-                // Bổ sung code xử lý cho trường hợp này
+                cart.placeOrder();
                 break;
             default:
                 System.out.println("Invalid choice. Please choose again.");
