@@ -57,24 +57,23 @@ public class Aims {
                 int detailChoice = scanner.nextInt();
                 switch (detailChoice) {
                     case 0:
-                        break; // Quay lại menu cửa hàng
+                        break;
                     case 1:
-                        if (media != null) { // Kiểm tra xem media có null không
-                            cart.addMedia(media); // Thêm media vào giỏ hàng
+                        if (media != null) { 
+                            cart.addMedia(media); 
                             System.out.println("Media \"" + media.getTitle() + "\" added to cart.");
                         } else {
                             System.out.println("No media available to add to cart.");
                         }
                         break;
                     case 2:
-                        store.playMedia(store, scanner); // Phát media
+                        store.playMedia(store, scanner);
                         break;
                     default:
                         System.out.println("Invalid choice. Please choose again.");
                         break;
                 }
                 break;
-            // Các case khác
         }
     }
     
