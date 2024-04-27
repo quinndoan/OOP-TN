@@ -14,6 +14,7 @@ public abstract class Media {
         this.category = category;
         this.cost = cost;
     }
+    public abstract void play();
 
     public int getId() {
         return id;
@@ -60,6 +61,9 @@ public abstract class Media {
             return Float.compare(media2.getCost(), media1.getCost());
         }
     }
+
+    //public abstract void play();
+    
 
     public static final Comparator<Media> COMPARE_BY_TITLE = new CompareByTitle();
 

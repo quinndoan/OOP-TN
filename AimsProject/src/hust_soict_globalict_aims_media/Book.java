@@ -14,6 +14,9 @@ import hust_soict_globalict_aims_media.*;
         public List<String> getAuthors(){
             return authors;
         }
+        public void play(){
+            // void since Book can not play
+        }
 
         public boolean isMatch(String title){
             return this.getTitle().equals(title);

@@ -82,7 +82,7 @@ public class Store {
 
         Book newBook = new Book(lastId++, title, category, cost);
         itemsInStore.add(newBook);
-        System.out.println("Sách đã được thêm vào cửa hàng.");
+        System.out.println("Book added.");
     }
 
     public static void seeMediaDetail(Store store, Scanner scanner) {
@@ -126,24 +126,26 @@ public class Store {
 
     public static void addMediaToCart(Store store, Cart cart, Scanner scanner) {
         System.out.println("List of media in the store:");
-        store.displayItemInStore(); // Gọi phương thức displayItemInStore từ đối tượng store
+        store.displayItemInStore(); 
         System.out.print("Enter the title of the media you want to add to cart: ");
         String title = scanner.nextLine();
-        title = scanner.nextLine(); // Đọc tiêu đề
+        title = scanner.nextLine(); 
     
         Media media = store.searchMediaByTitle(title, store.getItemsInStore());
     
         if (media != null) {
             cart.addMedia(media);
             System.out.println("Media \"" + title + "\" added to cart.");
+            if (media instanceof DigitalVideoDisc) {
+                int numberOfDVDsInCart = cart.countDVDsInCart();
+                System.out.println("Number of DVDs in the cart: " + numberOfDVDsInCart);
+            }
         } else {
             System.out.println("Media with title \"" + title + "\" not found in the store.");
         }
     }
     
 
-
-    // Tìm kiếm media theo tiêu đề
     public Media searchMediaByTitle(String title, ArrayList<Media> items) {
         for (Media media : items) {
             if (media.getTitle().equalsIgnoreCase(title)) {
@@ -153,7 +155,22 @@ public class Store {
         return null;
     }
 
-    // Lấy media được chọn từ cửa hàng
+    public void playMedia(Store store, Scanner scanner) {
+        System.out.print("Enter the title of the media you want to play: ");
+        String title = scanner.nextLine();
+        title = scanner.nextLine(); // Đọc tiêu đề
+    
+        // Tìm kiếm media trong store dựa trên tiêu đề
+        Media media = store.searchMediaByTitle(title, store.getItemsInStore());
+    
+        if (media != null) {
+            media.play();
+        } else {
+            System.out.println("Media with title \"" + title + "\" not found in the store.");
+        }
+    }
+    
+
     public static Media getSelectedMediaFromStore(Store store, Scanner scanner) {
         ArrayList<Media> itemsInStore = store.getItemsInStore();
 

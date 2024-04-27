@@ -38,6 +38,16 @@ public class Cart {
         }
     }
 
+    public int countDVDsInCart() {
+        int count = 0;
+        for (Media media : itemsOrdered) {
+            if (media instanceof DigitalVideoDisc) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public void print() {
         if (itemsOrdered.isEmpty()) {
             System.out.println("The cart is empty");

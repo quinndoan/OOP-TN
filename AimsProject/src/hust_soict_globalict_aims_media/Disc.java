@@ -10,6 +10,7 @@ public class Disc extends Media{
         this.length = length;
 
     }
+    
 
     public String getDirector(){
         return director;
@@ -24,5 +25,8 @@ public class Disc extends Media{
 
     public void setLength(int length){
         this.length = length;
+    }
+    public void play() {
+        // void
     }
 }
