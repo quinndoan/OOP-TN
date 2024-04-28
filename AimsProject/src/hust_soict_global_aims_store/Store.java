@@ -191,7 +191,7 @@ public class Store {
     }
     
 
-    public static void play(Store store, Scanner scanner) {
+    public static void play(Store store, Scanner scanner) {   // only CD and DVD are allowed to play
         System.out.print("Enter the title of the media: ");
         String title = scanner.nextLine();
         title = scanner.nextLine(); // Đọc tiêu đề
