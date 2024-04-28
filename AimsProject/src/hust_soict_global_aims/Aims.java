@@ -25,7 +25,7 @@ public class Aims {
                     updateStore(store, scanner);
                     break;
                 case 3:
-                    cart.print();
+                    cartMenu(cart, scanner);
                     break;
                 default:
                     System.out.println("Invalid choice. Please choose again.");
@@ -47,7 +47,7 @@ public class Aims {
     public static void viewStore(Store store, Cart cart, Scanner scanner) {
         System.out.println("Items in the store:");
         store.displayItemInStore(); // Hiển thị tất cả các mặt hàng trong cửa hàng
-        storeMenu(); // Hiển thị menu của cửa hàng
+        storeMenu(); 
         int choice = scanner.nextInt();
         switch (choice) {
             case 0:
@@ -159,7 +159,7 @@ public class Aims {
                 Media.filterMediaInCart(cart, scanner);
                 break;
             case 2:
-                cart.sortMediaInCart(cart,scanner);
+                cart.sortMediaInCart(scanner);
                 break;
             case 3:
                 Cart.removeMediaFromCart(cart, scanner);

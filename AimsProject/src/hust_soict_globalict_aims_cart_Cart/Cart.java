@@ -41,7 +41,7 @@ public class Cart {
         return null;
     }
 
-    public static void addMediaToCart(Store store, Cart cart, Scanner scanner) {
+    public static void addMediaToCart(Store store, Cart cart, Scanner scanner) {// case ask user
     System.out.print("Enter the title of the media: ");
     String title = scanner.nextLine();
     title = scanner.nextLine(); // Đọc tiêu đề
@@ -93,7 +93,7 @@ public class Cart {
         return total;
     }
 
-    public void sortMediaInCart(Cart cart,Scanner scanner) {
+    public void sortMediaInCart(Scanner scanner) {
         System.out.println("Sort media in cart:");
         System.out.println("1. By Title");
         System.out.println("2. By Cost");
@@ -110,7 +110,12 @@ public class Cart {
                 break;
             default:
                 System.out.println("Invalid option. Please choose again.");
-                break;
+                return;
+        }
+    
+        // Print the sorted items
+        for (Media media : itemsOrdered) {
+            System.out.println(media.getTitle() + " - " + media.getCost());
         }
     }
     
