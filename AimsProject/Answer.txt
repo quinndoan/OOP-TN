@@ -1,10 +1,25 @@
+Write a toString() method for the DigitalVideoDisc class. What should be the
+return type of this method?
+The expected reture type: String
+
+
 Which classes are aggregates of other classes?
+Disc, Book can be considered as aggregates of Media.
+CompactDisc, DigitalVideoDisc are aggregates of Media.
+Track is aggregate of CompactDisc.
+
 
 If the passing object is not an instance of Media, what happens?
 The comparison will return false.
 
 
 Observe what happens and explain in detail(Polymorphism)
+We can see that by using polymorphism and the toString() method,
+we are able to iterate through a list of Media objects containing different types of media
+and have each object's specific information printed out correctly based on its actual type.
+This can be explained by the advantage of polymorphism at behavior level: the appropriate method implementation is determined dynamically
+at runtime based on the actual type of the object.
+
 
 Reading Assignment: Please answer three questions below:
 - What are the advantages of Polymorphism?
@@ -13,24 +28,45 @@ Reading Assignment: Please answer three questions below:
 
 
 Advantages of Polymorphism
-
 1. Reuse code: By using polymorphism, we can write methods that can work with objects of multiple classes, which reduces redundancy and promotes code reusability.
 2. Flexible and easy to extend: Polymorphism helps to create systems that are more flexible and easier to extend. For example, we can add new classes that implement existing interfaces or extend existing classes without modifying the existing code that uses those classes or interfaces.
 3. Enhanced Readability: Polymorphic code tends to be more readable and easier to maintain because it promotes a higher level of abstraction.
+
 
 How Inheritance is useful to achieve Polymorphism in Java:
 In Java, inheritance allows a class (subclass) to inherit properties and behaviors from another class (superclass).
 This relationship helps to achieve polymorphism because it allows objects of different classes to be treated as objects of a common superclass.
 This commonality enables polymorphic behavior, where methods defined in the superclass can be overridden in the subclass, allowing different implementations to be invoked dynamically at runtime.
 
+
 Differences between Polymorphism and Inheritance in Java:
+
+Inheritance: one in which a new class is created (derived class) that inherits the features from the already existing class(Base class).
+Polymorphism: that which can be defined in multiple forms.
+
+Inheritance: applied to classes
+Polymorphism: applied to functions or methods
+
+Inheritance supports the concept of reusability and reduces code length in object-oriented programming.
+Polymorphism allows the object to decide which form of the function to implement at compile-time (overloading) as well as run-time (overriding).
+
+Inheritance can be single, hybrid, multiple, hierarchical and multilevel inheritance.
+Polymorphism: can be compiled-time polymorphism (overload) as well as run-time polymorphism (overriding).
 
 
 Questions about interface:
 - What class should implement the Comparable interface?
+The Media class should implement the Comparable interface because it represents the items in the cart that we want to compare.
 - In those classes, how should you implement the compareTo()method to reflect the ordering that
 we want?
+In the compareTo() method of the Media class, we should define the logic to compare two Media objects based on
+the desired ordering rules. For example, if we want to sort by title then cost, the compareTo() method would compare the titles
+first, and if they are the same, it would compare the costs and reversed.
 - Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this
 Comparable interface approach?
+No, with the Comparable interface approach, we can only define one natural ordering for the objects.
+If we want to support multiple ordering rules, we would need to implement a separate Comparator for each rule
 - Suppose the DVDs have a different ordering rule from the other media types, that is by title, then
 decreasing length, then cost. How would you modify your code to allow this?
+We need to override the compareTo() method in the DVD class
+to implement the expected custom ordering rule (e.g., by title, decreasing length, then cost).
