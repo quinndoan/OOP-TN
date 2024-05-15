@@ -1,5 +1,6 @@
 package hust.globalict.aims.screen.manager; // must rename the package once
 import hust.globalict.aims.Interface.Playable.Playable;
+import hust.globalict.aims.Media.DigitalVideoDisc;
 import hust.globalict.aims.Media.Media;
 import hust.globalict.aims.store.Store;
 import java.awt.BorderLayout;
@@ -116,7 +117,34 @@ public class StoreManagerScreen extends JFrame{
         setVisible(true);
     }
     public static void main(String[] args){
+        Store store = new Store();
+       DigitalVideoDisc dvd1 = new DigitalVideoDisc(1, "The Lion King", "Animation", 19.95f, "Roger Allers", 87);
+        store.addMedia(dvd1);
+ 
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc(2, "Star Wars", "Science Fiction", 24.95f, "George Lucas", 87);
+        store.addMedia(dvd2);
         
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc(3, "Star Wars", "Science Fiction", 24.95f, "George Lucas", 87);
+        store.addMedia(dvd3);
+        DigitalVideoDisc dvd4 = new DigitalVideoDisc(4, "Star Wars", "Science Fiction", 24.95f, "George Lucas", 87);
+        store.addMedia(dvd4);
+        DigitalVideoDisc dvd5 = new DigitalVideoDisc(5, "Star Wars", "Science Fiction", 24.95f, "George Lucas", 87);
+        store.addMedia(dvd5);
+        DigitalVideoDisc dvd6 = new DigitalVideoDisc(6, "Star Wars", "Science Fiction", 24.95f, "George Lucas", 87);
+        store.addMedia(dvd6);
+        DigitalVideoDisc dvd7 = new DigitalVideoDisc(7, "Star Wars", "Science Fiction", 24.95f, "George Lucas", 87);
+        store.addMedia(dvd7);
+
+        DigitalVideoDisc dvd8 = new DigitalVideoDisc(8, "Star Wars", "Science Fiction", 24.95f, "George Lucas", 87);
+        store.addMedia(dvd8);
+
+        DigitalVideoDisc dvd9 = new DigitalVideoDisc(9, "Star Wars", "Science Fiction", 24.95f, "George Lucas", 87);
+        store.addMedia(dvd9);
+        DigitalVideoDisc dvd10 = new DigitalVideoDisc(10, "Star Wars", "Science Fiction", 24.95f, "George Lucas", 87);
+        store.addMedia(dvd10);
+ 
+ 
+        new StoreManagerScreen(store);
     }
 
 }
