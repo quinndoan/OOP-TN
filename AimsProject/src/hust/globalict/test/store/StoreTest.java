@@ -1,7 +1,7 @@
 package hust.globalict.test.store;
 import hust.globalict.aims.Media.DigitalVideoDisc;
 import hust.globalict.aims.Media.Media;
-import hust.globalict.aims.store.Store.Store;
+import hust.globalict.aims.store.Store;
 
 public class StoreTest {
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-package hust.globalict.aims.store.Store;
+package hust.globalict.aims.store;
 import hust.globalict.aims.Media.Book;
 import hust.globalict.aims.Media.CompactDisc;
 import hust.globalict.aims.Media.DigitalVideoDisc;

@@ -1,7 +1,7 @@
 package hust.globalict.aims.cart;
 import hust.globalict.aims.Media.DigitalVideoDisc;
 import hust.globalict.aims.Media.Media;
-import hust.globalict.aims.store.Store.Store;
+import hust.globalict.aims.store.Store;
 import java.util.ArrayList;
 import java.util.Scanner;
 

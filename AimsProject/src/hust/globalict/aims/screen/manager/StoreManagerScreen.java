@@ -1,8 +1,7 @@
 package hust.globalict.aims.screen.manager; // must rename the package once
 import hust.globalict.aims.Interface.Playable.Playable;
 import hust.globalict.aims.Media.Media;
-import hust.globalict.aims.store.Store.Store;
-import hust.globalict.aims.Interface.Playable.*;
+import hust.globalict.aims.store.Store;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
