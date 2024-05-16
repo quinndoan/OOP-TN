@@ -5,13 +5,14 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public abstract class Media {
+    private static int currentId =0;
     private int id;
     private String title;
     private String category;
     private float cost;
 
-    public Media(int id, String title, String category, float cost) {
-        this.id = id;
+    public Media(String title, String category, float cost) {
+        this.id = ++currentId;
         this.title = title;
         this.category = category;
         this.cost = cost;
