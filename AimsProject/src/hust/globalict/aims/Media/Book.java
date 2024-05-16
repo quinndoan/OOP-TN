@@ -1,14 +1,15 @@
 
 package hust.globalict.aims.Media;
 import java.util.ArrayList;
-import java.lang.Object;
 import java.util.List;
 
 
     public class Book extends Media{
+        private String author;
         private List<String> authors = new ArrayList<>();
-        public Book(int id, String title, String category, float cost){
-            super(id, title, category, cost);
+        public Book(String title, String category, float cost){
+            super(title, "Book", cost);
+            this.author = author;
         }
         public List<String> getAuthors(){
             return authors;

@@ -1,9 +1,11 @@
 package hust.globalict.aims.Media;
 
 public class DigitalVideoDisc extends Disc{
+    private  String director;
+    private int length;
 
-    public DigitalVideoDisc(int id, String title, String category, float cost, String director, int length){
-        super(id, title, category,cost);
+    public DigitalVideoDisc(String title, String category, float cost){
+        super(title, "Digital Video Disc",cost);
         this.setDirector(director);
         this.setLength(length);
     }

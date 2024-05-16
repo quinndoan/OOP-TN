@@ -1,5 +1,5 @@
 package hust.globalict.aims.Media;
-import hust.globalict.aims.Interface.Playable.Playable;
+import hust.globalict.aims.Interface.Playable;
 public class Track implements Playable{
     private String title;
     private int length;

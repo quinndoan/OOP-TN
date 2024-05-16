@@ -4,8 +4,8 @@ public class Disc extends Media{
     private String director;
     private int length;
 
-    public Disc(int id, String title, String category, float cost){
-        super(id, title, category,cost);
+    public Disc(String title, String category, float cost){
+        super(title, "Disc",cost);
         this.director = director;
         this.length = length;
 

@@ -1,13 +1,13 @@
 package hust.globalict.aims.Media;
-import hust.globalict.aims.Interface.Playable.Playable;
+import hust.globalict.aims.Interface.Playable;
 import java.util.ArrayList;
 
 public class CompactDisc extends Disc implements Playable {
     private String artist;
     private ArrayList<Track> tracks = new ArrayList<>();
 
-    public CompactDisc(int id, String title, String category, float cost, String artist) {
-        super(id, title, category, cost);
+    public CompactDisc(String title, String category, float cost) {
+        super(title, "Compact Disc", cost);
         this.artist = artist;
     }
 
