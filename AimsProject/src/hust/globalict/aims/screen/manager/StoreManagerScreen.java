@@ -1,7 +1,5 @@
 package hust.globalict.aims.screen.manager; // must rename the package once
 import hust.globalict.aims.Interface.Playable;
-import hust.globalict.aims.Media.Book;
-import hust.globalict.aims.Media.CompactDisc;
 import hust.globalict.aims.Media.DigitalVideoDisc;
 import hust.globalict.aims.Media.Media;
 import hust.globalict.aims.store.Store;
@@ -17,7 +15,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 public class StoreManagerScreen extends JFrame{
     private Store store;
@@ -113,119 +110,6 @@ public class StoreManagerScreen extends JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
-    public void AddItemToStoreScreen(Store store) {
-        this.store = store;
-        setTitle("Add Item to Store");
-        setSize(400, 300);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        Container cp = getContentPane();
-        cp.setLayout(new BorderLayout());
-        cp.add(createFormPanel(), BorderLayout.CENTER);
-        cp.add(createButtonPanel(), BorderLayout.SOUTH);
-
-        setJMenuBar(createMenuBar());
-    }
-
-    public class AddBookToStoreScreen extends AddItemToStoreScreen {
-    public AddBookToStoreScreen(Store store) {
-        super(store);
-    }
-
-    @Override
-    JPanel createFormPanel() {
-        JPanel panel = new JPanel(new GridLayout(3, 2));
-        panel.add(new JLabel("Title:"));
-        titleField = new JTextField();
-        panel.add(titleField);
-
-        panel.add(new JLabel("Cost:"));
-        costField = new JTextField();
-        panel.add(costField);
-
-        panel.add(new JLabel("Author:"));
-        JTextField authorField = new JTextField();
-        panel.add(authorField);
-
-        return panel;
-    }
-
-    @Override
-    void addItemToStore() {
-        String title = titleField.getText();
-        float cost = Float.parseFloat(costField.getText());
-        String author = ((JTextField) ((JPanel) getContentPane().getComponent(0)).getComponent(5)).getText();
-        store.addMedia(new Book(title, author, cost));
-    }
-}
-
-public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
-    public AddCompactDiscToStoreScreen(Store store) {
-        super(store);
-    }
-
-    @Override
-    JPanel createFormPanel() {
-        JPanel panel = new JPanel(new GridLayout(3, 2));
-        panel.add(new JLabel("Title:"));
-        titleField = new JTextField();
-        panel.add(titleField);
-
-        panel.add(new JLabel("Cost:"));
-        costField = new JTextField();
-        panel.add(costField);
-
-        panel.add(new JLabel("Artist:"));
-        JTextField artistField = new JTextField();
-        panel.add(artistField);
-
-        return panel;
-    }
-
-    @Override
-    void addItemToStore() {
-        String title = titleField.getText();
-        float cost = Float.parseFloat(costField.getText());
-        String artist = ((JTextField) ((JPanel) getContentPane().getComponent(0)).getComponent(5)).getText();
-        store.addMedia(new CompactDisc(title, artist, cost));
-    }
-}
-
-public class AddDigitalVideoDiscToStoreScreen extends AddItemToStoreScreen {
-    public AddDigitalVideoDiscToStoreScreen(Store store) {
-        super(store);
-    }
-
-    @Override
-    JPanel createFormPanel() {
-        JPanel panel = new JPanel(new GridLayout(3, 2));
-        panel.add(new JLabel("Title:"));
-        titleField = new JTextField();
-        panel.add(titleField);
-
-        panel.add(new JLabel("Cost:"));
-        costField = new JTextField();
-        panel.add(costField);
-
-        panel.add(new JLabel("Director:"));
-        JTextField directorField = new JTextField();
-        panel.add(directorField);
-
-        return panel;
-    }
-
-    @Override
-    void addItemToStore() {
-        String title = titleField.getText();
-        float cost = Float.parseFloat(costField.getText());
-        String director = ((JTextField) ((JPanel) getContentPane().getComponent(0)).getComponent(5)).getText();
-        store.addMedia(new DigitalVideoDisc(title, director, cost));
-    }
-}
-
-
 
 
     public static void main(String[] args){
