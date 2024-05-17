@@ -28,16 +28,42 @@ public class StoreManagerScreen extends JFrame{
         JMenu menu = new JMenu("Options");
         menu.add(new JMenuItem("View store"));
         JMenu smUpdateStore = new JMenu("Update Store");
-        smUpdateStore.add(new JMenuItem("Add Book"));
-        smUpdateStore.add(new JMenuItem("Add CD"));
-        smUpdateStore.add(new JMenuItem("Add DVD"));
+    
+        JMenuItem addBookMenuItem = new JMenuItem("Add Book");
+        addBookMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AddBookToStoreScreen(store);
+            }
+        });
+        smUpdateStore.add(addBookMenuItem);
+    
+        JMenuItem addCDMenuItem = new JMenuItem("Add CD");
+        addCDMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AddCompactDiscToStoreScreen(store); 
+            }
+        });
+        smUpdateStore.add(addCDMenuItem);
+    
+        JMenuItem addDVDMenuItem = new JMenuItem("Add DVD");
+        addDVDMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AddDigitalDiscToStoreScreen(store); 
+            }
+        });
+        smUpdateStore.add(addDVDMenuItem);
+    
         menu.add(smUpdateStore);
-
+    
         JMenuBar menuBar = new JMenuBar();
         menuBar.setLayout(new FlowLayout(FlowLayout.LEFT));
         menuBar.add(menu);
         return menuBar;
     }
+    
 
     JPanel createHeader(){
         JPanel header = new JPanel();
