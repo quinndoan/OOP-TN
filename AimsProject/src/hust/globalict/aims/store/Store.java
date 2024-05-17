@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Store {
-    private static int lastId = 1;
     private ArrayList<Media> itemsInStore = new ArrayList<>();
 
     public ArrayList<Media> getItemsInStore() {
@@ -52,7 +51,7 @@ public class Store {
         System.out.print("Enter cost: ");
         float cost = scanner.nextFloat();
 
-        CompactDisc newCD = new CompactDisc(lastId++, title, category, cost, artist);
+        CompactDisc newCD = new CompactDisc(title, category,artist,cost);
         itemsInStore.add(newCD);
         System.out.println("CD added.");
     }
@@ -69,7 +68,7 @@ public class Store {
         System.out.print("Enter cost: ");
         float cost = scanner.nextFloat();
 
-        DigitalVideoDisc newDVD = new DigitalVideoDisc(lastId++, title, category, cost, director, length);
+        DigitalVideoDisc newDVD = new DigitalVideoDisc(title, category, cost, director, length);
         itemsInStore.add(newDVD);
         System.out.println("DVD added.");
     }
@@ -82,7 +81,7 @@ public class Store {
         System.out.print("Enter cost: ");
         float cost = scanner.nextFloat();
 
-        Book newBook = new Book(lastId++, title, category, cost);
+        Book newBook = new Book(title, category, cost);
         itemsInStore.add(newBook);
         System.out.println("Book added.");
     }

@@ -4,8 +4,8 @@ public class DigitalVideoDisc extends Disc{
     private  String director;
     private int length;
 
-    public DigitalVideoDisc(String title, String category, float cost){
-        super(title, "Digital Video Disc",cost);
+    public DigitalVideoDisc(String title, String category, float cost, String author, int length){
+        super(title, category,cost);
         this.setDirector(director);
         this.setLength(length);
     }

@@ -1,33 +1,37 @@
 package hust.globalict.aims.screen.manager;
 
-import hust.globalict.aims.Media.Book;
 import hust.globalict.aims.Media.CompactDisc;
-import hust.globalict.aims.Media.DigitalVideoDisc;
 import hust.globalict.aims.store.Store;
 
 import javax.swing.*;
 import java.awt.*;
 
-
 public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
+    private JTextField categoryField;
+    private JTextField artistField;
+
     public AddCompactDiscToStoreScreen(Store store) {
         super(store);
     }
 
     @Override
     JPanel createFormPanel() {
-        JPanel panel = new JPanel(new GridLayout(3, 2));
+        JPanel panel = new JPanel(new GridLayout(4, 2)); // Thay đổi số lượng hàng thành 4
         panel.add(new JLabel("Title:"));
         titleField = new JTextField();
         panel.add(titleField);
 
+        panel.add(new JLabel("Category:"));
+        categoryField = new JTextField();
+        panel.add(categoryField);
+
+        panel.add(new JLabel("Artist:"));
+        artistField = new JTextField();
+        panel.add(artistField);
+
         panel.add(new JLabel("Cost:"));
         costField = new JTextField();
         panel.add(costField);
-
-        panel.add(new JLabel("Artist:"));
-        JTextField artistField = new JTextField();
-        panel.add(artistField);
 
         return panel;
     }
@@ -35,8 +39,9 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
     @Override
     void addItemToStore() {
         String title = titleField.getText();
+        String category = categoryField.getText();
+        String artist = artistField.getText();
         float cost = Float.parseFloat(costField.getText());
-        String artist = ((JTextField) ((JPanel) getContentPane().getComponent(0)).getComponent(5)).getText();
-        store.addMedia(new CompactDisc(title, artist, cost));
+        store.addMedia(new CompactDisc(title, category, artist,cost));
     }
 }

@@ -3,8 +3,8 @@ import hust.globalict.aims.Media.DigitalVideoDisc;
 
 public class TestPassingParameter {
     public static void main(String[] args) {
-        DigitalVideoDisc jungleDVD = new DigitalVideoDisc(1, "jungleDVD", "Animation", 19.95f, "Roger Allers", 87);
-        DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc(2, "cinderellaDVD", "Animation", 19.95f, "Roger Allers", 87);
+        DigitalVideoDisc jungleDVD = new DigitalVideoDisc("jungleDVD", "Animation", 19.95f, "Roger Allers", 87);
+        DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("cinderellaDVD", "Animation", 19.95f, "Roger Allers", 87);
 
         swap(jungleDVD, cinderellaDVD);
 
@@ -26,7 +26,7 @@ public class TestPassingParameter {
     public static void changeTitle(DigitalVideoDisc dvd, String title){
         String oldTitle = dvd.getTitle();
         dvd.setTitle(title);
-        dvd = new DigitalVideoDisc(3,oldTitle,"Anime",13.45f,"Lucas",89);
+        dvd = new DigitalVideoDisc(oldTitle,"Anime",13.45f,"Lucas",89);
 
     }
     

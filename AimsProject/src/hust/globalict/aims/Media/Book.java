@@ -8,7 +8,7 @@ import java.util.List;
         private String author;
         private List<String> authors = new ArrayList<>();
         public Book(String title, String category, float cost){
-            super(title, "Book", cost);
+            super(title, category, cost);
             this.author = author;
         }
         public List<String> getAuthors(){
