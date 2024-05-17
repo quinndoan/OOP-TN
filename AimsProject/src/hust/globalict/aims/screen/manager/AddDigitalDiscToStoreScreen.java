@@ -12,8 +12,12 @@ public class AddDigitalDiscToStoreScreen extends AddItemToStoreScreen {
 
     public AddDigitalDiscToStoreScreen(Store store) {
         super(store);
+        setTitle("Add DVD to Store");
+        setSize(400, 300);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setVisible(true);
     }
-
     @Override
     protected JPanel createFormPanel() {
         JPanel panel = new JPanel(new GridLayout(5, 2));

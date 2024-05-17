@@ -12,6 +12,11 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
 
     public AddCompactDiscToStoreScreen(Store store) {
         super(store);
+        setTitle("Add CD to Store");
+        setSize(400, 300);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setVisible(true);
     }
 
     @Override

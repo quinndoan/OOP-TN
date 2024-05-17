@@ -1,16 +1,18 @@
 package hust.globalict.aims.screen.manager;
 
 import hust.globalict.aims.Media.Book;
-import hust.globalict.aims.Media.CompactDisc;
-import hust.globalict.aims.Media.DigitalVideoDisc;
 import hust.globalict.aims.store.Store;
-
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 
 public class AddBookToStoreScreen extends AddItemToStoreScreen {
     public AddBookToStoreScreen(Store store) {
         super(store);
+        setTitle("Add Book to Store");
+        setSize(400, 300);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setVisible(true);
     }
 
     @Override
