@@ -6,17 +6,11 @@ import hust.globalict.aims.Media.DigitalVideoDisc;
 import hust.globalict.aims.Media.Media;
 import hust.globalict.aims.store.Store;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-import javax.swing.BorderFactory;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
+import javax.swing.*;
+import java.awt.event.ActionListener;
+
 
 public class StoreManagerScreen extends JFrame{
     private Store store;
@@ -87,10 +81,17 @@ public class StoreManagerScreen extends JFrame{
             JPanel container = new JPanel();
             container.setLayout((new FlowLayout(FlowLayout.CENTER)));
 
-            if (media instanceof Playable){
-                JButton playButton = new JButton("Play");
-                container.add(playButton);
-            }
+           if (media instanceof Playable) {
+            JButton playButton = new JButton("Play");
+            playButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    playMedia();
+                }
+            });
+            container.add(playButton);
+        }
+
             this.add(Box.createVerticalGlue());
             this.add(title);
             this.add(cost);
@@ -98,6 +99,16 @@ public class StoreManagerScreen extends JFrame{
             this.add(container);
 
             this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        }
+        private void playMedia() {
+            JDialog dialog = new JDialog();
+            dialog.setTitle("Playing: " + media.getTitle());
+            JTextArea textArea = new JTextArea();
+            textArea.setEditable(false);
+            dialog.add(new JScrollPane(textArea));
+            dialog.setSize(400, 300);
+            dialog.setLocationRelativeTo(null);
+            dialog.setVisible(true);
         }
     }
 
