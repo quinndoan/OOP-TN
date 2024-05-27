@@ -1,14 +1,16 @@
 package hust.globalict.aims.screen.manager; // must rename the package once
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import javax.swing.*;
+
 import hust.globalict.aims.Interface.Playable;
 import hust.globalict.aims.Media.Book;
 import hust.globalict.aims.Media.CompactDisc;
 import hust.globalict.aims.Media.DigitalVideoDisc;
 import hust.globalict.aims.Media.Media;
 import hust.globalict.aims.store.Store;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import javax.swing.*;
+
 import java.awt.event.ActionListener;
 
 

@@ -1,5 +1,4 @@
-package painter;
-
+package javafx;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -52,3 +51,4 @@ public class PainterController {
     }
 
 }
+

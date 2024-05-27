@@ -1,8 +1,9 @@
 package hust.globalict.aims.screen.manager;
 
+import javax.swing.*;
+
 import hust.globalict.aims.store.Store;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
