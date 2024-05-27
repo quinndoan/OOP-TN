@@ -1,11 +1,12 @@
 package hust.globalict.aims.store;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 import hust.globalict.aims.Media.Book;
 import hust.globalict.aims.Media.CompactDisc;
 import hust.globalict.aims.Media.DigitalVideoDisc;
 import hust.globalict.aims.Media.Media;
 import hust.globalict.aims.cart.Cart;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Store {
     private ArrayList<Media> itemsInStore = new ArrayList<>();

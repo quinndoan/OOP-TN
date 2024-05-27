@@ -1,10 +1,11 @@
 package hust.globalict.aims.Main;
 
+import java.util.ArrayList;
+
 import hust.globalict.aims.Media.Book;
 import hust.globalict.aims.Media.CompactDisc;
 import hust.globalict.aims.Media.DigitalVideoDisc;
 import hust.globalict.aims.Media.Media;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args){

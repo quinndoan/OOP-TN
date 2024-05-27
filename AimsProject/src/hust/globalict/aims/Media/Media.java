@@ -1,8 +1,9 @@
 package hust.globalict.aims.Media;
 
-import hust.globalict.aims.cart.Cart;
 import java.util.Comparator;
 import java.util.Scanner;
+
+import hust.globalict.aims.cart.Cart;
 
 public abstract class Media {
     private static int lastId =1;

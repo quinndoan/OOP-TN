@@ -1,10 +1,10 @@
 package hust.globalict.test.cart;
 
+import java.util.ArrayList;
+
 import hust.globalict.aims.Media.DigitalVideoDisc;
 import hust.globalict.aims.Media.Media;
 import hust.globalict.aims.cart.Cart;
-
-import java.util.ArrayList;
 
 public class CartTest {
     public static void main(String[] args) {

@@ -1,8 +1,9 @@
 package hust.globalict.aims.Aims;
+import java.util.Scanner;
+
 import hust.globalict.aims.Media.Media;
 import hust.globalict.aims.cart.Cart;
 import hust.globalict.aims.store.Store;
-import java.util.Scanner;
 
 public class Aims {
     public static void main(String[] args) {
