@@ -1,7 +1,7 @@
 package globalict.aims.screen.controller;
 
 import globalict.aims.cart.Cart;
-import globalict.aims.exception.PlayerException;
+//import globalict.aims.exception.PlayerException;
 import globalict.aims.Media.Media;
 import globalict.aims.Interface.Playable;
 
@@ -21,6 +21,9 @@ public class CartController {
 
     @FXML
     private Button btnRemove;
+
+    @FXML
+    private TableColumn<Media, Integer> colMediaId;
 
     @FXML
     private TableColumn<Media, Float> colMediaCost;
@@ -52,32 +55,32 @@ public class CartController {
     @FXML
     private Button placeOrder;
 
-    @FXML
-    void placeOrderPressed(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, cart.placeOrder());
-        alert.setTitle("Order created");
-        alert.setHeaderText(null);
-        alert.showAndWait();
-    }
+    // @FXML
+    // void placeOrderPressed(ActionEvent event) {
+    //     Alert alert = new Alert(Alert.AlertType.INFORMATION, cart.placeOrder());
+    //     alert.setTitle("Order created");
+    //     alert.setHeaderText(null);
+    //     alert.showAndWait();
+    // }
 
-    @FXML
-    void btnPlayPressed(ActionEvent event) {
-        Media media = tblMedia.getSelectionModel().getSelectedItem();
-        Alert alert;
-        try {
-            alert = new Alert(Alert.AlertType.NONE, media.playGUI());
-            alert.setTitle("Playing");
-            alert.setHeaderText(null);
-            alert.getDialogPane().getButtonTypes().add(ButtonType.OK);
-            alert.showAndWait();
-        } catch (PlayerException e) {
-            alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
-            alert.setTitle("ERROR");
-            alert.setHeaderText(null);
-            alert.showAndWait();
-        }
+    // @FXML
+    // void btnPlayPressed(ActionEvent event) {
+    //     Media media = tblMedia.getSelectionModel().getSelectedItem();
+    //     Alert alert;
+    //     try {
+    //         alert = new Alert(Alert.AlertType.NONE, media.playGUI());
+    //         alert.setTitle("Playing");
+    //         alert.setHeaderText(null);
+    //         alert.getDialogPane().getButtonTypes().add(ButtonType.OK);
+    //         alert.showAndWait();
+    //     } catch (PlayerException e) {
+    //         alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
+    //         alert.setTitle("ERROR");
+    //         alert.setHeaderText(null);
+    //         alert.showAndWait();
+    //     }
         
-    }
+    // }
 
     @FXML
     void btnRemovePressed(ActionEvent event) {
@@ -93,6 +96,9 @@ public class CartController {
 
     @FXML
     void initialize() {
+        colMediaId.setCellValueFactory(
+            new PropertyValueFactory<Media, Integer>("id")
+        );
         colMediaTitle.setCellValueFactory(
             new PropertyValueFactory<Media, String>("title")
         );
