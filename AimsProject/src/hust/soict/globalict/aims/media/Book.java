@@ -1,9 +1,7 @@
 
-package hust_soict_globalict_aims_media;
+package hust.soict.globalict.aims.media;
 import java.util.ArrayList;
-import java.lang.Object;
 import java.util.List;
-import hust_soict_globalict_aims_media.*;
 
 
     public class Book extends Media{

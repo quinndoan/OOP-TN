@@ -1,5 +1,7 @@
-package hust_soict_global_aims_store;
-import hust_soict_globalict_aims_media.*;
+package hust.soict.globalict.test.store;
+import hust.soict.globalict.aims.media.DigitalVideoDisc;
+import hust.soict.globalict.aims.media.Media;
+import hust.soict.globalict.aims.store.Store;
 
 public class StoreTest {
     public static void main(String[] args){

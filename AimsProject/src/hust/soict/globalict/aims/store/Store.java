@@ -1,9 +1,12 @@
-package hust_soict_global_aims_store;
+package hust.soict.globalict.aims.store;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import hust_soict_globalict_aims_cart_Cart.Cart;
-import hust_soict_globalict_aims_media.*;
+import hust.soict.globalict.aims.cart.Cart;
+import hust.soict.globalict.aims.media.Book;
+import hust.soict.globalict.aims.media.CompactDisc;
+import hust.soict.globalict.aims.media.DigitalVideoDisc;
+import hust.soict.globalict.aims.media.Media;
 
 public class Store {
     private static int lastId = 1;

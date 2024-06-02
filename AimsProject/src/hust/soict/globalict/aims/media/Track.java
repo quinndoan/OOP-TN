@@ -1,5 +1,5 @@
-package hust_soict_globalict_aims_media;
-import hust_soict_global_aims_Interface.*;
+package hust.soict.globalict.aims.media;
+import hust.soict.globalict.Interface.Playable;
 public class Track implements Playable{
     private String title;
     private int length;

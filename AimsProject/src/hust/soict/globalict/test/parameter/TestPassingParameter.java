@@ -1,5 +1,5 @@
-package hust_soict_globalict_aims_TestPassingParameter;
-import hust_soict_globalict_aims_media.DigitalVideoDisc;
+package hust.soict.globalict.test.parameter;
+import hust.soict.globalict.aims.media.DigitalVideoDisc;
 
 public class TestPassingParameter {
     public static void main(String[] args) {

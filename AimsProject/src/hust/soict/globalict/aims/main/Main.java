@@ -1,9 +1,11 @@
-package hust_soict_global_aims_poly;
+package hust.soict.globalict.aims.main;
 
 import java.util.ArrayList;
-import hust_soict_globalict_aims_media.*;
-import hust_soict_globalict_aims_media.CompactDisc;
-import hust_soict_globalict_aims_media.DigitalVideoDisc;
+
+import hust.soict.globalict.aims.media.Book;
+import hust.soict.globalict.aims.media.CompactDisc;
+import hust.soict.globalict.aims.media.DigitalVideoDisc;
+import hust.soict.globalict.aims.media.Media;
 
 public class Main {
     public static void main(String[] args) {

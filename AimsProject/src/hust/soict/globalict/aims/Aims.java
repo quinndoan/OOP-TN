@@ -1,9 +1,9 @@
-package hust_soict_global_aims;
-import hust_soict_global_aims_store.*;
-import hust_soict_globalict_aims_media.*;
-import hust_soict_globalict_aims_cart_Cart.*;
-
+package hust.soict.globalict.aims;
 import java.util.Scanner;
+
+import hust.soict.globalict.aims.cart.Cart;
+import hust.soict.globalict.aims.media.Media;
+import hust.soict.globalict.aims.store.Store;
 
 public class Aims {
     public static void main(String[] args) {

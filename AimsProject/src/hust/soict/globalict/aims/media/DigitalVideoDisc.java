@@ -1,5 +1,4 @@
-package hust_soict_globalict_aims_media;
-import hust_soict_globalict_aims_media.Media;
+package hust.soict.globalict.aims.media;
 
 public class DigitalVideoDisc extends Disc{
 

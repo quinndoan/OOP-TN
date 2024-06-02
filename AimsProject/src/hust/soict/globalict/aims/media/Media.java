@@ -1,9 +1,9 @@
-package hust_soict_globalict_aims_media;
+package hust.soict.globalict.aims.media;
 
 import java.util.Comparator;
 import java.util.Scanner;
 
-import hust_soict_globalict_aims_cart_Cart.Cart;
+import hust.soict.globalict.aims.cart.Cart;
 
 public abstract class Media {
     private int id;

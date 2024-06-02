@@ -1,4 +1,4 @@
-package hust_soict_global_aims_Interface;
+package hust.soict.globalict.Interface;
 
 public interface Playable {
     public void play();

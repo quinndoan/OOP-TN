@@ -1,8 +1,7 @@
-package hust_soict_globalict_aims_media;
+package hust.soict.globalict.aims.media;
 import java.util.ArrayList;
-import hust_soict_globalict_aims_media.Track;
 
-import hust_soict_global_aims_Interface.*;
+import hust.soict.globalict.Interface.Playable;
 
 public class CompactDisc extends Disc implements Playable {
     private String artist;

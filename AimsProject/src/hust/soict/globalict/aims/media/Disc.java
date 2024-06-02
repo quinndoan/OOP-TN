@@ -1,4 +1,4 @@
-package hust_soict_globalict_aims_media;
+package hust.soict.globalict.aims.media;
 
 public class Disc extends Media{
     private String director;

@@ -1,10 +1,10 @@
-package hust_soict_globalict_aims_cart_CartTest;
-
-import hust_soict_globalict_aims_cart_Cart.Cart;
-import hust_soict_globalict_aims_media.DigitalVideoDisc;
-import hust_soict_globalict_aims_media.Media;
+package hust.soict.globalict.test.cart;
 
 import java.util.ArrayList;
+
+import hust.soict.globalict.aims.cart.Cart;
+import hust.soict.globalict.aims.media.DigitalVideoDisc;
+import hust.soict.globalict.aims.media.Media;
 
 public class CartTest {
     public static void main(String[] args) {
