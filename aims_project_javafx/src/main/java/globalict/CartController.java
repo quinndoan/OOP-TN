@@ -1,4 +1,4 @@
-package globalict.aims.screen.controller;
+package globalict;
 
 import globalict.aims.cart.Cart;
 //import globalict.aims.exception.PlayerException;
