@@ -1,6 +1,7 @@
 package javafx;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
@@ -46,7 +47,7 @@ public class PainterController {
 
     @FXML
     void initialize() {
-        assert drawingAreaPane != null : "fx:id=\"drawingAreaPane\" was not injected: check your FXML file 'Painter.fxml'.";
+        assert drawingAreaPane != null : "fx:id=\"drawingAreaPane\" was not injected: check 'Painter.fxml'.";
 
     }
 
