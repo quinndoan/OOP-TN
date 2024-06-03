@@ -12,7 +12,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 public class ViewStoreController
 {   
-    private Cart cart = new Cart();
+    private Store store;
+    public ViewStoreController(Store store){
+        this.store = store;
+    }
+
 
     @FXML
     private GridPane gridPane;
@@ -21,10 +25,6 @@ public class ViewStoreController
     void btnViewCartPressed(ActionEvent event) {
 
     }
-        private Store store;
-        public ViewStoreController(Store store){
-            this.store = store;
-        }
     
     @FXML
   
@@ -36,7 +36,7 @@ public class ViewStoreController
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("Item.fxml"));
-                ItemController itemController = new ItemController(cart);
+                ItemController itemController = new ItemController(store);
                 fxmlLoader.setController(itemController);
                 AnchorPane anchorPane = new AnchorPane();
                 anchorPane = fxmlLoader.load();
