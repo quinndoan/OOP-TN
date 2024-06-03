@@ -48,7 +48,11 @@
                                 <ToggleGroup fx:id="filterCategory" />
                             </toggleGroup>
                         </RadioButton>
-                        <RadioButton text="By Title" toggleGroup="$filterCategory" />
+                        <RadioButton text="By Title">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="filterCategory" />
+                            </toggleGroup>
+                        </RadioButton>
                     </children>
                     <padding>
                         <Insets top="10.0" bottom="10.0" />
