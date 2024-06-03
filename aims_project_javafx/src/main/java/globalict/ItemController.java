@@ -1,6 +1,7 @@
 package globalict;
 import globalict.aims.Interface.Playable;
 import globalict.aims.Media.Media;
+import globalict.aims.cart.Cart;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -8,6 +9,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 public class ItemController{
+     private Cart cart;
+
+    public ItemController(Cart cart) {
+        this.cart = cart;
+    }
 
     @FXML
     private Button btnAddToCart;

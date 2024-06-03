@@ -12,7 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 public class ViewStoreController
 {   
-    
+    private Cart cart = new Cart();
 
     @FXML
     private GridPane gridPane;
