@@ -1,13 +1,15 @@
 package globalict.aims.Aims;
+
 import java.util.Scanner;
 
 import globalict.aims.Media.Media;
 import globalict.aims.cart.Cart;
 import globalict.aims.exception.PlayerException;
 import globalict.aims.store.Store;
+import javafx.scene.control.Alert;
 
 public class Aims {
-    public static void main(String[] args) throws PlayerException {
+    public static void main(String[] args) {
         Store store = new Store();
         Cart cart = new Cart();
         Scanner scanner = new Scanner(System.in);
@@ -45,7 +47,7 @@ public class Aims {
         System.out.println("Please choose a number: 0-1-2-3");
     }
 
-    public static void viewStore(Store store, Cart cart, Scanner scanner) throws PlayerException {
+    public static void viewStore(Store store, Cart cart, Scanner scanner) {
         System.out.println("Items in the store:");
         store.displayItemInStore(); // Hiển thị tất cả các mặt hàng trong cửa hàng
         storeMenu(); 
@@ -70,7 +72,15 @@ public class Aims {
                         System.out.println("Media \"" + media.getTitle() + "\" added to cart.");
                         break;
                     case 2:
-                        store.playMedia(store, scanner);
+                        try {
+                            store.playMedia(store, scanner);
+                        } catch (PlayerException e) {
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setTitle("Error");
+                            alert.setHeaderText("Cannot play media");
+                            alert.setContentText(e.getMessage());
+                            alert.showAndWait();
+                        }
                         break;
                     default:
                         System.out.println("Invalid choice. Please choose again.");
@@ -81,7 +91,15 @@ public class Aims {
                 cart.addMediaToCart(store, cart, scanner);
                 break;
             case 3:
-                store.playMedia(store, scanner);
+                try {
+                    store.playMedia(store, scanner);
+                } catch (PlayerException e) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setHeaderText("Cannot play media");
+                    alert.setContentText(e.getMessage());
+                    alert.showAndWait();
+                }
                 break;
             case 4:
                 cart.print();
@@ -139,7 +157,7 @@ public class Aims {
         }
     }
     
-    public static void cartMenu(Cart cart, Scanner scanner) throws PlayerException {
+    public static void cartMenu(Cart cart, Scanner scanner) {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
         System.out.println("1. Filter media in cart");
@@ -166,7 +184,15 @@ public class Aims {
                 Cart.removeMediaFromCart(cart, scanner);
                 break;
             case 4:
-                cart.playMedia(cart,scanner);
+                try {
+                    cart.playMedia(cart,scanner);
+                } catch (PlayerException e) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setHeaderText("Cannot play media");
+                    alert.setContentText(e.getMessage());
+                    alert.showAndWait();
+                }
                 break;
             case 5:
                 cart.placeOrder();
