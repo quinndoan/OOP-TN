@@ -1,5 +1,7 @@
 package globalict.aims.Media;
 
+import globalict.aims.exception.PlayerException;
+
 public class Disc extends Media{
     private String director;
     private int length;
@@ -26,7 +28,7 @@ public class Disc extends Media{
     public void setLength(int length){
         this.length = length;
     }
-    public void play() {
+    public void play() throws PlayerException {
         // void
     }
 }

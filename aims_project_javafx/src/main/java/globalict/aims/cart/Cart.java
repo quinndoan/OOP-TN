@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import globalict.aims.Media.DigitalVideoDisc;
 import globalict.aims.Media.Media;
+import globalict.aims.exception.PlayerException;
 import globalict.aims.store.Store;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -143,7 +144,7 @@ public class Cart {
             System.out.println("Media with title \"" + title + "\" not found in the cart.");
         }
     }
-    public void playMedia(Cart cart, Scanner scanner) {
+    public void playMedia(Cart cart, Scanner scanner) throws PlayerException {
         System.out.print("Enter the title of the media you want to play: ");
         String title = scanner.nextLine();
         title = scanner.nextLine(); // Đọc tiêu đề

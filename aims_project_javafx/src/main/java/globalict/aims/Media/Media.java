@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 import globalict.aims.cart.Cart;
+import globalict.aims.exception.PlayerException;
 
 public abstract class Media {
     private static int lastId =1;
@@ -21,7 +22,7 @@ public abstract class Media {
     private static synchronized int generateUniqueId() {
         return lastId++;
     }
-    public abstract void play();
+    public abstract void play() throws PlayerException;
 
     public int getId() {
         return id;

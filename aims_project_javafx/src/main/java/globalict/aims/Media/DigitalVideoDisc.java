@@ -1,5 +1,7 @@
 package globalict.aims.Media;
 
+import globalict.aims.exception.PlayerException;
+
 public class DigitalVideoDisc extends Disc{
     private  String director;
     private int length;
@@ -20,9 +22,15 @@ public boolean isMatch(String title){
 public String toString() {
     return getTitle() + "-"+getCategory()+ "-"+ getDirector()+"-"+getLength() +"-"+getCost();
 }
-public void play(){
-    System.out.println("Play DVD: "+this.getTitle());
-    System.out.println("DVD length: "+this.getLength());
+
+    @Override
+    public void play() throws PlayerException {
+    if (this.getLength() > 0) {
+        System.out.println("Play DVD: "+this.getTitle());
+        System.out.println("DVD length: "+this.getLength());
+    } else {
+        throw new PlayerException("ERROR: DVD length is non-positive!");
+    }
 }
 
 }

@@ -7,6 +7,7 @@ import globalict.aims.Media.CompactDisc;
 import globalict.aims.Media.DigitalVideoDisc;
 import globalict.aims.Media.Media;
 import globalict.aims.cart.Cart;
+import globalict.aims.exception.PlayerException;
 public class Store {
     private ArrayList<Media> itemsInStore = new ArrayList<>();
 
@@ -176,7 +177,7 @@ public class Store {
         return null;
     }
 
-    public void playMedia(Store store, Scanner scanner) {
+    public void playMedia(Store store, Scanner scanner) throws PlayerException {
         System.out.print("Enter the title of the media you want to play: ");
         String title = scanner.nextLine();
         title = scanner.nextLine(); // Đọc tiêu đề
@@ -192,7 +193,7 @@ public class Store {
     }
     
 
-    public static void play(Store store, Scanner scanner) {   // only CD and DVD are allowed to play
+    public static void play(Store store, Scanner scanner) throws PlayerException {   // only CD and DVD are allowed to play
         System.out.print("Enter the title of the media: ");
         String title = scanner.nextLine();
         title = scanner.nextLine(); // Đọc tiêu đề

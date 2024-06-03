@@ -3,10 +3,11 @@ import java.util.Scanner;
 
 import globalict.aims.Media.Media;
 import globalict.aims.cart.Cart;
+import globalict.aims.exception.PlayerException;
 import globalict.aims.store.Store;
 
 public class Aims {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws PlayerException {
         Store store = new Store();
         Cart cart = new Cart();
         Scanner scanner = new Scanner(System.in);
@@ -44,7 +45,7 @@ public class Aims {
         System.out.println("Please choose a number: 0-1-2-3");
     }
 
-    public static void viewStore(Store store, Cart cart, Scanner scanner) {
+    public static void viewStore(Store store, Cart cart, Scanner scanner) throws PlayerException {
         System.out.println("Items in the store:");
         store.displayItemInStore(); // Hiển thị tất cả các mặt hàng trong cửa hàng
         storeMenu(); 
@@ -138,7 +139,7 @@ public class Aims {
         }
     }
     
-    public static void cartMenu(Cart cart, Scanner scanner) {
+    public static void cartMenu(Cart cart, Scanner scanner) throws PlayerException {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
         System.out.println("1. Filter media in cart");
