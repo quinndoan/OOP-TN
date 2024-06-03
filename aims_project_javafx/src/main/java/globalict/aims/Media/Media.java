@@ -7,7 +7,7 @@ import java.util.Scanner;
 import globalict.aims.cart.Cart;
 import globalict.aims.exception.PlayerException;
 
-public abstract class Media {
+public abstract class Media implements Comparable<Media>{
     private static int lastId =1;
     private int id;
     private String title;
@@ -56,6 +56,23 @@ public abstract class Media {
         Media media = (Media) obj;
         return Float.compare(media.cost, cost) == 0 && Objects.equals(title, media.title);
     }
+
+    @Override
+    public int compareTo(Media other) {
+        if (other == null) {
+            throw new NullPointerException();
+        }
+        if (!(other instanceof Media)) {
+            throw new ClassCastException();
+        }
+        int titleComparison = this.title.compareTo(other.title);
+        if (titleComparison != 0) {
+            return titleComparison;
+        } else {
+            return Float.compare(this.cost, other.cost);
+        }
+    }
+
 
     public static class CompareByTitle implements Comparator<Media> {
         @Override
