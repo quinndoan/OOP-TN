@@ -1,26 +1,38 @@
 package globalict;
 
 import globalict.aims.cart.Cart;
-import globalict.aims.store.Store;
 import globalict.aims.Media.Media;
+
+import java.io.IOException;
+
 import globalict.aims.Interface.Playable;
+import globalict.aims.store.Store;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class CartController {
 
     private Cart cart;
+    private Store store;
 
     @FXML
     private Button btnPlay;
 
     @FXML
     private Button btnRemove;
+
+    @FXML
+    private Button btnViewStore; // New button to view the store
 
     @FXML
     private TableColumn<Media, Integer> colMediaId;
@@ -55,21 +67,32 @@ public class CartController {
     @FXML
     private Button placeOrder;
 
-    public CartController(Cart cart) {
+    public CartController(Store store, Cart cart) {
+        this.store = store;
         this.cart = cart;
-    }
-
-    public CartController(Store store, Cart cart2) {
-        //TODO Auto-generated constructor stub
     }
 
     @FXML
     void btnRemovePressed(ActionEvent event) {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
         cart.removeMedia(media);
-     //   costLabel.setText(cart.totalCost() + " $");
+        costLabel.setText(cart.totalCost() + " $");
     }
 
+    @FXML
+    void btnViewStorePressed(ActionEvent event) { // New event handler to view the store
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Store.fxml"));
+            fxmlLoader.setController(new ViewStoreController(store));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Store");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     @FXML
     public void initialize() {
         colMediaId.setCellValueFactory(new PropertyValueFactory<>("id"));
