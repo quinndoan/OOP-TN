@@ -1,6 +1,7 @@
 package globalict;
 
 import globalict.aims.cart.Cart;
+import globalict.aims.store.Store;
 import globalict.aims.Media.Media;
 import globalict.aims.Interface.Playable;
 import javafx.beans.value.ChangeListener;
@@ -56,6 +57,10 @@ public class CartController {
 
     public CartController(Cart cart) {
         this.cart = cart;
+    }
+
+    public CartController(Store store, Cart cart2) {
+        //TODO Auto-generated constructor stub
     }
 
     @FXML
