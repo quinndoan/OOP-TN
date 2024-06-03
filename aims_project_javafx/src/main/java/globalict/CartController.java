@@ -62,7 +62,7 @@ public class CartController {
     void btnRemovePressed(ActionEvent event) {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
         cart.removeMedia(media);
-        costLabel.setText(cart.totalCost() + " $");
+     //   costLabel.setText(cart.totalCost() + " $");
     }
 
     @FXML
