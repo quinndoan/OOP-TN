@@ -1,10 +1,8 @@
 package globalict;
 
 import globalict.aims.cart.Cart;
-//import globalict.aims.exception.PlayerException;
 import globalict.aims.Media.Media;
 import globalict.aims.Interface.Playable;
-
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.transformation.FilteredList;
@@ -14,8 +12,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class CartController {
+
     private Cart cart;
-    
+
     @FXML
     private Button btnPlay;
 
@@ -26,13 +25,13 @@ public class CartController {
     private TableColumn<Media, Integer> colMediaId;
 
     @FXML
-    private TableColumn<Media, Float> colMediaCost;
-
-    @FXML
     private TableColumn<Media, String> colMediaTitle;
 
     @FXML
-    private TableColumn<Media, String> colMediacategory;
+    private TableColumn<Media, String> colMediaCategory;
+
+    @FXML
+    private TableColumn<Media, Float> colMediaCost;
 
     @FXML
     private TableView<Media> tblMedia;
@@ -45,7 +44,7 @@ public class CartController {
 
     @FXML
     private RadioButton radioBtnFilterTitle;
-    
+
     @FXML
     private Label costLabel;
 
@@ -55,32 +54,9 @@ public class CartController {
     @FXML
     private Button placeOrder;
 
-    // @FXML
-    // void placeOrderPressed(ActionEvent event) {
-    //     Alert alert = new Alert(Alert.AlertType.INFORMATION, cart.placeOrder());
-    //     alert.setTitle("Order created");
-    //     alert.setHeaderText(null);
-    //     alert.showAndWait();
-    // }
-
-    // @FXML
-    // void btnPlayPressed(ActionEvent event) {
-    //     Media media = tblMedia.getSelectionModel().getSelectedItem();
-    //     Alert alert;
-    //     try {
-    //         alert = new Alert(Alert.AlertType.NONE, media.playGUI());
-    //         alert.setTitle("Playing");
-    //         alert.setHeaderText(null);
-    //         alert.getDialogPane().getButtonTypes().add(ButtonType.OK);
-    //         alert.showAndWait();
-    //     } catch (PlayerException e) {
-    //         alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
-    //         alert.setTitle("ERROR");
-    //         alert.setHeaderText(null);
-    //         alert.showAndWait();
-    //     }
-        
-    // }
+    public CartController(Cart cart) {
+        this.cart = cart;
+    }
 
     @FXML
     void btnRemovePressed(ActionEvent event) {
@@ -89,25 +65,13 @@ public class CartController {
         costLabel.setText(cart.totalCost() + " $");
     }
 
-    public CartController(Cart cart) {
-        super();
-        this.cart = cart;
-    }
-
     @FXML
-    void initialize() {
-        colMediaId.setCellValueFactory(
-            new PropertyValueFactory<Media, Integer>("id")
-        );
-        colMediaTitle.setCellValueFactory(
-            new PropertyValueFactory<Media, String>("title")
-        );
-        colMediacategory.setCellValueFactory(
-            new PropertyValueFactory<Media, String>("category")
-        );
-        colMediaCost.setCellValueFactory(
-            new PropertyValueFactory<Media, Float>("cost")
-        );
+    public void initialize() {
+        colMediaId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colMediaTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+        colMediaCategory.setCellValueFactory(new PropertyValueFactory<>("category"));
+        colMediaCost.setCellValueFactory(new PropertyValueFactory<>("cost"));
+
         tblMedia.setItems(this.cart.getItemsOrdered());
 
         costLabel.setText(cart.totalCost() + "$");
