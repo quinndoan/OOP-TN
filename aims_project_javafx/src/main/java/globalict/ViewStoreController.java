@@ -1,17 +1,22 @@
 package globalict;
 
 import java.io.IOException;
-
+import globalict.aims.cart.*;
 import globalict.aims.store.Store;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 public class ViewStoreController
 {   
     private Store store;
+    private Cart cart;
     public ViewStoreController(Store store){
         this.store = store;
     }
@@ -22,7 +27,17 @@ public class ViewStoreController
 
     @FXML
     void btnViewCartPressed(ActionEvent event) {
-
+        try {
+            FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("Cart.fxml"));
+                fxmlLoader.setController(new CartController(store, cart));
+                Parent root = fxmlLoader.load();
+                Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.setTitle("Cart");
+                stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }   
     }
     
     @FXML
