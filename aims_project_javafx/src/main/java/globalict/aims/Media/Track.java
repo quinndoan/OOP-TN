@@ -1,5 +1,6 @@
 package globalict.aims.Media;
 import globalict.aims.Interface.Playable;
+import globalict.aims.exception.PlayerException;
 public class Track implements Playable{
     private String title;
     private int length;
@@ -28,8 +29,14 @@ public class Track implements Playable{
         return title.equals(other.title) && length == other.length;
     }
 
-    public void play(){
+    public void play() throws PlayerException {
+    if (this.getLength() > 0) {
         System.out.println("Playing tracks: "+this.getTitle());
         System.out.println("Track Length: "+this.getLength());
+    } else {
+        throw new PlayerException("ERROR: DVD length is non-positive!");
     }
+}
+
+   
 }
