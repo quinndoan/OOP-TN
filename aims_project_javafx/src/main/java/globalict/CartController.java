@@ -84,18 +84,7 @@ public class CartController {
 
                 @Override
                 public void changed(ObservableValue<? extends Media> observable, Media oldValue, Media newValue) {
-                    if (newValue != null) {
-                        updateButtonBar(newValue);
-                    }
-                }
-
-                private void updateButtonBar(Media media) {
-                    btnRemove.setVisible(true);
-                    if (media instanceof Playable) {
-                        btnPlay.setVisible(true);
-                    } else {
-                        btnPlay.setVisible(false);
-                    }
+                    updateButtonBar(newValue);
                 }
             }
         );
@@ -128,5 +117,19 @@ public class CartController {
             }
         });
 
+    }
+
+    private void updateButtonBar(Media media) {
+        if (media == null) {
+            btnPlay.setVisible(false);
+            btnRemove.setVisible(false);
+        } else {
+            btnRemove.setVisible(true);
+            if (media instanceof Playable) {
+                btnPlay.setVisible(true);
+            } else {
+                btnPlay.setVisible(false);
+            }
+        }
     }
 }
