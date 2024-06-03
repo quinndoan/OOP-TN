@@ -50,12 +50,15 @@ public class CompactDisc extends Disc implements Playable {
     }
 
    public void play() throws PlayerException {
-    if (this.getLength() > 0) {
-        for (Track track : tracks) {
+    if (this.getLength()>0){
+        java.util.Iterator iter = tracks.iterator();
+        Track nextTrack;
+        while (iter.hasNext()){
+            nextTrack = (Track) iter.next();
             try {
-                track.play();
+                nextTrack.play();
             } catch (PlayerException e) {
-                System.err.println(e.getMessage());
+                throw e;
             }
         }
     } else {
