@@ -1,6 +1,7 @@
 package globalict.aims.Media;
 
 import java.util.Comparator;
+import java.util.Objects;
 import java.util.Scanner;
 
 import globalict.aims.cart.Cart;
@@ -44,16 +45,16 @@ public abstract class Media {
         this.title = title;
     }
 
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Media other = (Media) obj;
-        return title.equals(other.getTitle());
+        Media media = (Media) obj;
+        return Float.compare(media.cost, cost) == 0 && Objects.equals(title, media.title);
     }
 
     public static class CompareByTitle implements Comparator<Media> {
