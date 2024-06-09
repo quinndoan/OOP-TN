@@ -1,9 +1,10 @@
 package hust.globalict.aims.cart;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 import hust.globalict.aims.Media.DigitalVideoDisc;
 import hust.globalict.aims.Media.Media;
 import hust.globalict.aims.store.Store;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Cart {
     private ArrayList<Media> itemsOrdered = new ArrayList<>();

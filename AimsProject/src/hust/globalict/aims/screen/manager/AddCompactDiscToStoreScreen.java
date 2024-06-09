@@ -1,10 +1,14 @@
 package hust.globalict.aims.screen.manager;
 
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import hust.globalict.aims.Media.CompactDisc;
 import hust.globalict.aims.store.Store;
-
-import javax.swing.*;
-import java.awt.*;
 
 public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
     private JTextField categoryField;

@@ -1,9 +1,14 @@
 package hust.globalict.aims.screen.manager;
 
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import hust.globalict.aims.Media.DigitalVideoDisc;
 import hust.globalict.aims.store.Store;
-import java.awt.*;
-import javax.swing.*;
 
 public class AddDigitalDiscToStoreScreen extends AddItemToStoreScreen {
     private JTextField categoryField;

@@ -1,9 +1,14 @@
 package hust.globalict.aims.screen.manager;
 
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import hust.globalict.aims.Media.Book;
 import hust.globalict.aims.store.Store;
-import java.awt.*;
-import javax.swing.*;
 
 public class AddBookToStoreScreen extends AddItemToStoreScreen {
     public AddBookToStoreScreen(Store store) {
